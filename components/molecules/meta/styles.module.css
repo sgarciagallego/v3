@@ -1,0 +1,23 @@
+.properties {
+  width: fit-content;
+  height: var(--space-x7);
+  margin: var(--space-x6) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-x5);
+}
+
+.properties > img {
+  height: 100%;
+  width: auto;
+}
+
+.properties p:first-of-type {
+  margin-bottom: 0;
+  color: rgb(var(--color-tone-100));
+  font-weight: 500;
+}
+
+.properties p:last-of-type {
+  font-size: var(--sm);
+}

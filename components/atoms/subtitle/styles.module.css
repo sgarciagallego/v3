@@ -1,0 +1,6 @@
+.properties {
+  margin-bottom: var(--space-x6) !important;
+  font-size: var(--h4);
+  font-weight: 500;
+  line-height: 1.15;
+}

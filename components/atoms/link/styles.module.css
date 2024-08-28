@@ -1,0 +1,37 @@
+.properties {
+  color: rgb(var(--color-tone-100));
+  text-decoration: underline;
+  text-decoration-color: rgb(var(--color-underline));
+  text-decoration-thickness: var(--space-x1);
+  text-underline-offset: var(--space-x3);
+}
+
+.properties:hover {
+  cursor: pointer;
+  background: rgb(var(--color-background_hover));
+}
+
+.properties:active,
+.properties:focus-visible {
+  outline: none;
+  background: rgb(var(--color-tone-100));
+  color: rgb(var(--color-tone-0));
+  text-decoration: none;
+}
+
+.social {
+  line-height: 1.25em;
+}
+
+.color {
+  margin-right: var(--space-x3);
+  display: inline-block;
+  width: var(--space-x4);
+  height: var(--space-x4);
+}
+
+.github { background: rgb(var(--color-brand-github)); }
+.linkedin { background: rgb(var(--color-brand-linkedin)); }
+.mastodon { background: rgb(var(--color-brand-mastodon)); }
+.rss { background: rgb(var(--color-tone-100)); }
+.substack { background: rgb(var(--color-brand-substack)); }

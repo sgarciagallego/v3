@@ -1,0 +1,67 @@
+@keyframes curtain {
+  0% {
+    opacity: 0;
+    transform: translateZ(500px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateZ(-100px);
+  }
+}
+
+@keyframes bubble {
+  0% { transform: translateZ(-100px); }
+  50% { transform: translateZ(90px); }
+  100% { transform: translateZ(0); }
+}
+
+@keyframes rise {
+  0% { 
+    transform: translateY(var(--space-x7)); 
+    background: rgb(var(--color-background));
+  }
+  100% { 
+    transform: translateY(0); 
+    background: rgb(var(--color-background), 0);
+  }
+}
+
+.properties {
+  margin-bottom: 0;
+  display: revert;
+  animation-name: rise;
+  animation-duration: 1s;
+  perspective: 500px;
+  animation-timing-function: cubic-bezier(.5,.25,.1,.995);
+  animation-delay: calc(1s + 1.25s + .2s);
+  animation-fill-mode: both;
+  white-space: pre;
+}
+@media (min-width: 320px) and (max-width: 479px) {
+  .properties {
+    font-size: clamp(3.5rem, 33.4375cqi, 7rem);
+  }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  .properties {
+    font-size: clamp(3rem, 16.1875cqi, 6rem);
+  }
+}
+@media (min-width: 768px) {
+  .properties {
+    font-size: clamp(4rem, 10.1875cqi, 8rem);
+  }
+}
+
+.properties > span {
+  display: inline-block;
+  animation-name: curtain, bubble;
+  animation-duration: 1s, 1.25s;
+  animation-timing-function: cubic-bezier(.5,.25,.1,.995);
+  animation-delay: 0s, calc(1s + var(--delay, 0s));
+  animation-fill-mode: forwards;
+}
+
+.preload {
+  color: rgb(var(--color-background));
+}

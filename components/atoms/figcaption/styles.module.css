@@ -1,0 +1,12 @@
+.properties > p {
+  margin-bottom: 0;
+}
+
+.properties > p:first-of-type {
+  color: rgb(var(--color-tone-100));
+  font-size: var(--sm);
+}
+
+.properties > p:not(:first-of-type) {
+  font-size: var(--meta);
+}

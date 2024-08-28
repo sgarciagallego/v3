@@ -1,0 +1,37 @@
+.properties {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.properties, .properties > a { cursor: pointer; }
+
+.properties > a {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin-left: -1em;
+  padding-right: 0.5em;
+  position: absolute;
+  text-decoration: none;
+}
+
+.properties > a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--space-xsm) rgb(var(--color-text))
+}
+
+.properties > a:focus-visible,
+.properties:hover a {
+  width: calc(100% + 1em);
+  height: 100%;
+  visibility: visible;
+}
+
+.properties > a::after {
+  content: '#';
+  color: rgb(var(--color-tone-40));
+  font-weight: 400;
+}

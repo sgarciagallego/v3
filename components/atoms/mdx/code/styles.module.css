@@ -1,0 +1,4 @@
+.properties::before,
+.properties::after {
+  content: '`';
+}

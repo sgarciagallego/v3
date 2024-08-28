@@ -1,0 +1,255 @@
+---
+  title: How to build an RSS feed in Next.js 14
+  summary: And why you should...
+  description: RSS feeds have been making a comeback recently, and for good reason. Check out this guide to add RSS into your application, and why you should consider it.
+  publishDate: 2024-08-14
+---
+
+I hadn’t heard of RSS feeds until I started my career in web development, which makes sense — being Gen Z, I only experienced the internet from the early 2000s onward, and by that time the 'open web' wasn’t really open anymore. Instead of free access to information, I encountered a web filled with ad modals, subscription paywalls, and other obstacles at every turn.
+
+With the internet's over-commercialisation, even our time and personal information became a commodity. Digital algorithms were designed to keep us engaged, and as we indulged, we unknowingly made it harder to break free. Social platforms exploit this, using human psychology to steal time from our loved ones, hobbies, pets and lives.
+
+So, what’s the solution? For me, it was:
+
+1. A **realisation** of the time that was being taken from me per day.
+2. A **digital detox**, where I deleted my Reddit, Instagram and TikTok accounts, as well as factory reset my phone and only installed the essential apps.
+3. **Integrate a routine** into daily life. For me, that was a morning routine inspired by [Andrew Huberman](https://www.flashhub.io/andrew-hubermans-morning-routine) that I track using [Routinery](https://routinery.app).
+3. **Installed [Mastodon](https://joinmastodon.org)** to post my photography and blogs for those interested, without the hit of dopamine an algorithm brings.
+4. **Set up [Reeder](https://reeder.app/classic)** to keep in touch with the news and personalities I’m interested in.
+
+An RSS feed reader (such as Reeder) allows the user to subscribe to content from a supported website. The cool thing about RSS is that much like Mastodon, **it operates without an algorithm**, resulting in a 100% user-controlled feed. If you would like a head start with RSS, here are some [popular personalities in the tech world that support RSS feeds](/uses#following).
+
+Even though RSS feeds are largely unknown to the public, Next.js makes it super easy to set up on the App Router, and by adopting this technology, you are actively supporting a more controlled, self-owned internet.
+
+## Creating a sitemap with dynamic content
+
+Before creating an RSS feed, let’s ensure that the content is dynamically generated on the sitemap, so it’s discoverable on the web.
+
+Inside the `app` directory, create a new file called `sitemap.ts` and add the following...
+
+```typescript
+import { MetadataRoute } from 'next';
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const root = process.env.NODE_ENV === 'production' 
+    ? 'https://yourwebsite.com' // replace with your website homepage
+    : 'http://localhost:3000';
+
+  const routes = [
+    '/',
+    '/about',
+    '/services',
+    '/contact',
+  ].map((route) => ({
+    url: `${root}${route}`,
+    lastModified: new Date().toISOString().split('T')[0],
+  }));
+
+  return routes;
+}
+```
+
+Here, we’ve created a new sitemap which contains an array of static website pages, that is mapped and formatted to form the structure of the sitemap. There is also the `lastModified` property, which is converted to showcase a readable YYYY-MM-DD format.
+
+There are no `priority` or `changeFrequency` properties, as [Google ignores these](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap#additional-notes-about-xml-sitemaps), but feel free to add them if necessary.
+
+Now, when heading to `http://localhost:3000/sitemap.xml`, the sitemap should appear! 
+
+![A screenshot of a generated sitemap](/blog/02/01.png)
+
+Now, let’s add some dynamic content...
+
+```typescript
+import { MetadataRoute } from 'next';
+import { getPosts } from '@/lib/posts';
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const root = process.env.NODE_ENV === 'production' 
+    ? 'https://yourwebsite.com' // change with your website
+    : 'http://localhost:3000';
+
+  const routes = ['/', '/about', '/services', '/contact'].map((route) => ({
+    url: `${root}${route}`,
+    lastModified: new Date().toISOString().split('T')[0],
+  }));
+
+  const posts = await getPosts();
+
+  posts.forEach(post => {
+    routes.push({
+      url: `${root}/blog/${post.slug}`,
+      lastModified: new Date(post.publishDate).toISOString().split('T')[0],
+    })
+  })
+
+  return routes;
+}
+```
+
+In this update, the imported `getPosts()` function requests the posts on the site. Replace this with the data-fetching method available.
+
+Each post is then looped and pushed into the array of routes, which includes a dynamically-constructed `url`, along with `lastModified` date of the post itself.
+
+Now when refreshing, the sitemap should load with some posts!
+
+![A sreenshot of a generated sitemap with dynamic content](/blog/02/02.png)
+
+## Creating an RSS feed
+
+To set up the RSS feed, the process will be similar to setting up the sitemap, but it will require a little extra tinkering.
+
+For this, we’ll make use of [Next.js Route Handlers](https://nextjs.org/docs/app/building-your-application/routing/route-handlers) which allow us to create an endpoint that can be used like an API, but in our case, will act as a file that’s returned on request.
+
+Inside of our `app` directory, create a directory called `rss.xml`, inside create a file called `route.ts` and add the following...
+
+```typescript
+export async function GET() {
+  return new Response('<Feed>', {
+    headers: {
+      'Content-Type': 'application/atom+xml; charset=utf-8',
+    },
+  });
+}
+```
+
+What this does is it sets up a route at `/rss.xml` that is simply returning a string, but also sets up the content type (XML).
+
+Now, when heading to `http://localhost:3000/rss.xml`, the following should be displayed, confirming that the route works...
+
+![Screenshot confirming the route works](/blog/02/03.png)
+
+Now, the tricky part. There is no current (at the time of writing) out-of-the-box mechanism for generating the XML for the feed, and I was too lazy to hand-write it.
+
+Luckily, there is the [node-rss](https://github.com/dylang/node-rss) package to generate the feed with ease...
+
+```console
+npm install rss @types/rss --save-dev
+```
+
+Once the installation is complete, restart the development environment and import the package into the `app/rss.xml/route.ts` file...
+
+```typescript
+import RSS from 'rss';
+```
+
+Now let’s start configuring the feed! Firstly, update the `GET()` function by adding the `root` constant...
+
+```typescript
+export async function GET() {
+  const root = process.env.NODE_ENV === 'production' 
+    ? 'https://yourwebsite.com' // change with your website
+    : 'http://localhost:3000';
+
+  ...
+  
+  return new Response('<Feed>', {
+    headers: {
+      'Content-Type': 'application/atom+xml; charset=utf-8',
+    },
+  });
+}
+```
+
+...and where I’ve added the ellipsis, (remove it) and add the feed instance...
+
+```typescript
+const feed = new RSS({
+  title: '[Your website]’s Blog',
+  description: '[A description of your website feed.]',
+  site_url: `${root}`,
+  feed_url: `${root}/blog`,
+  copyright: `${new Date().getFullYear()} — [Your website]`,
+  language: 'en',
+  pubDate: new Date(),
+});
+```
+
+This is the general information about a website, and will only appear once. Here is some information on the different properties:
+
+- **`title`** defines the information of a website’s title.
+- **`description`** holds the information of a website’s description.
+- **`site_url`** defines a website’s root URL.
+- **`feed_url`** defines a website’s parent publication page.
+- **`copyright`** contains copyright information.
+- **`language`** defines the language which the feed is written in.
+- **`pubDate`** defines the last publication date.
+
+Finally, update the `Response` to include the feed...
+
+```typescript
+return new Response(feed.xml({ indent: true }), {
+  headers: {
+    'Content-Type': 'application/atom+xml; charset=utf-8',
+  },
+});
+```
+
+..using the `xml` method and setting `indent: true` for formatting purposes.
+
+Now, when reloading the web page, the feed should look something like this...
+
+![Screenshot of the /rss.xml path rendering website content](/blog/02/04.png)
+
+Similar to the sitemap, the posts need to be mapped through to be added to the feed. Under the `feed` constant and before the `return` statement, add the following...
+
+```typescript
+const posts = await getPosts();
+
+posts.map((post) => {
+  feed.item({
+    title: post.title,
+    description: post.description,
+    guid: `${root}/blog/${post.slug}`,
+    url: `${root}/blog/${post.slug}`,
+    date: new Date(post.publishDate),
+  })
+})
+```
+
+...and of course, ensure your function that fetches posts is imported...
+
+```typescript
+import { getPosts } from '@/lib/posts';
+```
+
+Of course, the properties included are not exhaustive. Adjust these as needed, [adding any additional properties](https://www.rssboard.org/rss-draft-1) that may be useful. 
+
+Upon visiting rss.xml on the site, the posts should be there to greet you!
+
+![Screenshot of dynamic blogs rendered on the rss feed](/blog/02/05.png)
+
+Now, all that is left is toallow search engines and crawlers to locate the RSS feed. This can be done by adding the following metadata properties to the `app/layout.tsx` file...
+
+```typescript
+import type { Metadata } from 'next';
+
+const root = process.env.NODE_ENV === 'production' 
+    ? 'https://yourwebsite.com' // change with your website
+    : 'http://localhost:3000';
+
+export const metadata: Metadata = {
+  alternates: {
+    types: {
+      'application/rss+xml': `${root}/rss.xml`,
+    },
+  }
+};
+```
+
+...which renders...
+
+```html
+<link rel="alternate" type="application/rss+xml" href="http://localhost:3000/rss.xml" />
+```
+
+Once the RSS feed is published, it can be [validated](https://validator.w3.org/feed) to ensure it’s discoverable.
+
+## Wrapping it up
+
+To recap, we’ve learned how to set up and configure an RSS feed in harmony with a sitemap and wider application.
+
+I had a nice time learning about RSS feeds, and the good integrating one is for the wider community. However, I never like having to install a dependency to get a job done, so hopefully Vercel brings support for in-house RSS solutions without the need for a dependency in Next.js.
+
+You can also check out the [Github repository](https://github.com/sgarciagallego/next-rss-feed) for the full source code if you get stuck and need a refresh from the long-form content. 
+
+It was a blast, onwards and upwards!

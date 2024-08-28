@@ -1,0 +1,78 @@
+:root {
+  --color-tone-0: 255 255 255;
+  --color-tone-10: 250 250 250;
+  --color-tone-15: 237 237 237;
+  --color-tone-20: 224 224 224;
+  --color-tone-30: 198 198 198;
+  --color-tone-40: 172 172 172;
+  --color-tone-50: 146 146 146;
+  --color-tone-60: 121 121 121;
+  --color-tone-70: 95 95 95;
+  --color-tone-80: 69 69 69;
+  --color-tone-90: 43 43 43;
+  --color-tone-100: 17 17 17;
+
+  --color-brand-github: 45 186 78;
+  --color-brand-linkedin: 11 102 194;
+  --color-brand-mastodon: 99 100 255;
+  --color-brand-rss: var(--color-tone-10);
+  --color-brand-substack: 255 103 25;
+
+  --color-background: var(--color-tone-10);
+  --color-background_hover: var(--color-tone-15);
+  --color-text: var(--color-tone-70);
+  --color-border: var(--color-tone-15);
+  --color-background-layer: var(--color-tone-0);
+  --color-background-layer_hover: var(--color-border);
+  --color-underline: var(--color-tone-60);
+  --color-standout: var(--color-border);
+
+  --sh-class: #2A5B8C;
+  --sh-identifier: #203040;
+  --sh-sign: #5C6166;
+  --sh-string: #0A6663;
+  --sh-keyword: #D92316;
+  --sh-comment: #665C5C;
+  --sh-jsxliterals: #5C60E6;
+  --sh-property: #B34512;
+  --sh-entity: #B34512;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-tone-0: 17 17 17;
+    --color-tone-05: 30 30 30;
+    --color-tone-10: 43 43 43;
+    --color-tone-20: 69 69 69;
+    --color-tone-30: 95 95 95;
+    --color-tone-40: 121 121 121;
+    --color-tone-50: 146 146 146;
+    --color-tone-60: 172 172 172;
+    --color-tone-70: 198 198 198;
+    --color-tone-80: 224 224 224;
+    --color-tone-90: 250 250 250;
+    --color-tone-100: 255 255 255;
+
+    --color-background: var(--color-tone-0);
+    --color-background_hover: var(--color-tone-10);
+    --color-text: var(--color-tone-60);
+    --color-border: var(--color-tone-10);
+    --color-background-layer: var(--color-tone-05);
+    --color-underline: var(--color-tone-40);
+
+    --sh-class: #6CA3D9;
+    --sh-identifier: #98B8D9;
+    --sh-sign: #A1AAB3;
+    --sh-string: #59B3B0;
+    --sh-keyword: #D9746C;
+    --sh-comment: #8C8585;
+    --sh-jsxliterals: #A1A3E6;
+    --sh-property: #B3826B;
+    --sh-entity: #B3826B;
+  }
+}
+
+body {
+  background: rgb(var(--color-background));
+  color: rgb(var(--color-text));
+}
