@@ -22,7 +22,7 @@ export default function Meta({
         <p rel='author'>Sergio Garcia Gallego</p>
         <p>
           <span>{counter(words)}</span>
-          {' • '}
+          {' · '}
           <time dateTime={publishDate}>{formatDate(publishDate)}</time>
         </p>
       </div>
