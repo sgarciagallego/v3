@@ -1,9 +1,11 @@
+import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import { siteConfig } from '@/lib/constant';
 import Footer from '@/components/molecules/footer';
 import Header from '@/components/organisms/header';
 import { heading, mono, sans } from '@/fonts';
-import '@/styles/globals.css';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 
 export const generateMetadata = (): Metadata => ({
   metadataBase: new URL(siteConfig.url),
@@ -44,6 +46,8 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );

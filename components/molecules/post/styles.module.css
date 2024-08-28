@@ -58,6 +58,8 @@ div.properties ol a:active > h2 {
   background: rgb(var(--color-background-layer_hover));
 }
 
+main.properties li { margin-bottom: var(--space-x5); }
+
 main.properties ol a:hover > h2 { background: rgb(var(--color-background_hover)); }
 
 main.properties ol a:active > h2,
