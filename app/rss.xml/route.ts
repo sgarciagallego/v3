@@ -1,7 +1,6 @@
 import RSS from 'rss';
 import { siteConfig } from '@/lib/constant';
 import { getPosts } from '../db/blog';
-import { getBytes } from '../db/bytes';
 
 export async function GET() {
   const feed = new RSS({

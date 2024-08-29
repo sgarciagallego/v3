@@ -8,7 +8,6 @@ export default function Nav() {
         <li><Hyperlink href='/'>home</Hyperlink></li>
         <li><Hyperlink href='/work'>work</Hyperlink></li>
         <li><Hyperlink href='/blog'>blog</Hyperlink></li>
-        <li><Hyperlink href='/bytes'>bytes</Hyperlink></li>
         <li><Hyperlink href='/album'>album</Hyperlink></li>
       </List>
     </nav>
