@@ -26,18 +26,6 @@ export async function GET() {
     })
   })
 
-  const bytes = await getBytes();
-
-  bytes.map((byte) => {
-    feed.item({
-      title: 'A byte',
-      description: byte.content,
-      guid: `${siteConfig.url}/bytes/`,
-      url: `${siteConfig.url}/bytes/`,
-      date: new Date(byte.metadata.publishDate),
-    })
-  })
-
   return new Response(feed.xml({ indent: true }), {
     headers: {
       'Content-Type': 'application/atom+xml; charset=utf-8',
