@@ -21,7 +21,7 @@ function parseFrontmatter( fileContent: string ) {
     let value = valueArr.join(': ').trim();
     value = value.replace(/^['"](.*)['"]$/, '$1');
     metadata[key.trim() as keyof Metadata] = value;
-  })
+  });
 
   return { metadata: metadata as Metadata, content };
 }
@@ -49,5 +49,5 @@ function getMDXData(dir: any) {
 }
 
 export function getPosts() {
-  return getMDXData(path.join(process.cwd(), 'content'));
+  return getMDXData(path.join(process.cwd(), 'content', 'blog'));
 }

@@ -1,6 +1,7 @@
 import RSS from 'rss';
 import { siteConfig } from '@/lib/constant';
 import { getPosts } from '../db/blog';
+import { getBytes } from '../db/bytes';
 
 export async function GET() {
   const feed = new RSS({
@@ -22,6 +23,18 @@ export async function GET() {
       guid: `${siteConfig.url}/blog/${post.slug}`,
       url: `${siteConfig.url}/blog/${post.slug}`,
       date: new Date(post.metadata.publishDate),
+    })
+  })
+
+  const bytes = await getBytes();
+
+  bytes.map((byte) => {
+    feed.item({
+      title: 'A byte',
+      description: byte.content,
+      guid: `${siteConfig.url}/bytes/`,
+      url: `${siteConfig.url}/bytes/`,
+      date: new Date(byte.metadata.publishDate),
     })
   })
 

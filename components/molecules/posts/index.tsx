@@ -2,8 +2,8 @@ import styles from './styles.module.css';
 import { getPosts } from '@/app/db/blog';
 import List from '@/components/atoms/list';
 import Hyperlink from '@/components/atoms/link';
-import { counter } from '@/utils/counter';
-import formatDate from '@/utils/formatDate';
+import counter from '@/utils/counter';
+import { formatDate } from '@/utils/formatDate';
 
 export default function Posts({ trim }: { trim?: boolean }) {
   const posts = getPosts();
@@ -35,5 +35,5 @@ export default function Posts({ trim }: { trim?: boolean }) {
         <Hyperlink href='/blog'>View all</Hyperlink>
       )}
     </Element>
-  )
+  );
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { siteConfig } from '@/lib/constant';
-import Posts from '@/components/molecules/post';
+import Posts from '@/components/molecules/posts';
 
 export const metadata: Metadata = {
   title: `Blog`,

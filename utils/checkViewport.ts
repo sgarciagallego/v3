@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export function checkViewport() {
+export default function checkViewport() {
   const [viewportWidth, setViewportWidth] = useState<number | undefined>(undefined);
 
   useEffect(() => {

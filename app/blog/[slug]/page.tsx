@@ -28,7 +28,7 @@ export async function generateMetadata({
   };
 }
 
-export default function SlugPage({ params }: { params: { slug: string } }) {
+export default function PostPage({ params }: { params: { slug: string } }) {
   const post = getPosts().find((post) => post.slug === params.slug);
 
   if (!post) {

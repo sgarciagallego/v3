@@ -12,7 +12,7 @@ function isWord(str: string): boolean {
   return false;
 }
 
-export function wordCounter(input: string): number {
+function wordCounter(input: string): number {
   const words = input.split(/\s+/);
   let wordCount = 0;
 
@@ -25,7 +25,7 @@ export function wordCounter(input: string): number {
   return wordCount;
 }
 
-export function counter(content: string, wordsPerMinute: number = 238): string {
+export default function counter(content: string, wordsPerMinute: number = 238): string {
   const wordCount = wordCounter(content);
   const minutes = Math.ceil(wordCount / wordsPerMinute);
   return `${minutes} min read`;

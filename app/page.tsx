@@ -5,7 +5,7 @@ import Hyperlink from '@/components/atoms/link';
 import PhotoGrid from '@/components/templates/grid/photo';
 import carousel from '@/lib/carousel';
 import Img from '@/components/atoms/image';
-import Posts from '@/components/molecules/post';
+import Posts from '@/components/molecules/posts';
 
 export const metadata: Metadata = {
   title: siteConfig.title,

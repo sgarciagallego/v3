@@ -1,4 +1,4 @@
-export function slugify(str: string) {
+export default function slugify(str: string) {
   return str
     .toString()
     .toLowerCase()

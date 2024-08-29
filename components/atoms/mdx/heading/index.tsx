@@ -1,5 +1,5 @@
 import styles from './styles.module.css';
-import { slugify } from '@/utils/slugify';
+import slugify from '@/utils/slugify';
 import React from 'react';
 
 export default function createHeading(level: number) {

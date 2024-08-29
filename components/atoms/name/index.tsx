@@ -1,5 +1,5 @@
 import styles from './styles.module.css';
-import { checkViewport } from '@/utils/checkViewport';
+import checkViewport from '@/utils/checkViewport';
 
 export default function Name() {
   const viewportWidth = checkViewport();

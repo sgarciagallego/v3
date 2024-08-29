@@ -1,7 +1,7 @@
 import styles from './styles.module.css';
 import Img from '@/components/atoms/image';
 import { counter } from '@/utils/counter';
-import formatDate from '@/utils/formatDate';
+import { formatDate } from '@/utils/formatDate';
 
 export default function Meta({ 
   publishDate,
