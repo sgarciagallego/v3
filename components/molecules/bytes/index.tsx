@@ -1,4 +1,3 @@
-import Img from '@/components/atoms/image';
 import styles from './styles.module.css';
 import { getBytes } from '@/app/db/bytes';
 import List from '@/components/atoms/list';
@@ -6,8 +5,8 @@ import { CustomMDX } from '@/components/atoms/mdx';
 import { formatTime } from '@/utils/formatDate';
 import Hyperlink from '@/components/atoms/link';
 
-export default function Bytes() {
-  const bytes = getBytes();
+export default async function Bytes() {
+  const bytes = await getBytes();
 
   return (
     <main className={styles.properties}>
