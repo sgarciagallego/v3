@@ -1,17 +1,18 @@
 import type { Metadata } from 'next';
 import { getPosts } from '@/app/db/blog';
+import { siteConfig } from '@/lib/constant';
 import { notFound } from 'next/navigation';
 import Headline from '@/components/atoms/headline';
 import Subtitle from '@/components/atoms/subtitle';
 import Meta from '@/components/molecules/meta';
 import { CustomMDX } from '@/components/atoms/mdx';
 
-export async function generateMetadata({ 
-  params 
-}: { 
-  params: { slug: string } 
+export async function generateMetadata({
+  params,
+}: {
+  params: any;
 }): Promise<Metadata | undefined> {
-  const post = getPosts().find((post) => post.slug === params.slug);
+  let post = getPosts().find((post) => post.slug === params.slug);
 
   if (!post) {
     return;
@@ -19,12 +20,33 @@ export async function generateMetadata({
 
   const {
     title,
+    publishDate: publishedTime,
     description: description,
+    image,
   } = post.metadata;
-  
+  const ogImage = image
+    ? `${siteConfig.url}${image}`
+    : `${siteConfig.url}/api/og?title=${title}`;
+
   return {
     title,
     description,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      publishedTime,
+      url: `${siteConfig.url}/blog/${post.slug}`,
+      images: [
+        { url: ogImage, },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImage],
+    },
   };
 }
 

@@ -9,7 +9,7 @@ export async function GET(req: NextRequest) {
 
   const hasTitle = searchParams.has('title');
   const title = hasTitle
-    ? searchParams.get('title')?.slice(0, 100)
+    ? searchParams.get('title')
     : 'Default title';
 
   const font = fetch(
