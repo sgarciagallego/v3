@@ -20,18 +20,17 @@ export const generateMetadata = (): Metadata => ({
     apple: '/favicon/apple-touch-icon.png',
   },
   openGraph: {
-    url: siteConfig.url,
     title: siteConfig.title,
     description: siteConfig.description,
+    url: siteConfig.url,
     siteName: siteConfig.title,
-    images: '/opengraph-image.png',
+    locale: 'en_GB',
     type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
     title: siteConfig.title,
     description: siteConfig.description,
-    images: '/opengraph-image.png',
+    card: 'summary_large_image',
   },
 })
 
