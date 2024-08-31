@@ -1,7 +1,7 @@
 const album = [
   {
     src: '/photography/000.jpg',
-    alt: '',
+    alt: 'My fiancé picking some blackberries, shortly before offering me some',
     caption: 'Have some blackberries!',
     width: 1365,
     height: 2048,
@@ -10,7 +10,7 @@ const album = [
   },
   {
     src: '/photography/001.jpg',
-    alt: '',
+    alt: 'Black and white portrait of a dead tree surrounded by live trees',
     caption: 'Death brings light',
     width: 1365,
     height: 2048,
@@ -19,7 +19,7 @@ const album = [
   },
   {
     src: '/photography/002.jpg',
-    alt: '',
+    alt: 'A portrait of my fiancé posing behind two connecting trees',
     caption: 'The reason I try',
     width: 1365,
     height: 2048,
@@ -28,7 +28,7 @@ const album = [
   },
   {
     src: '/photography/003.jpg',
-    alt: '',
+    alt: 'Common ivy traversing a brick wall',
     caption: 'Nature always wins',
     width: 1365,
     height: 2048,
@@ -37,7 +37,7 @@ const album = [
   },
   {
     src: '/photography/004.jpg',
-    alt: '',
+    alt: 'A log used as the foundation for a fence, surrounded by trees',
     caption: 'Opening in a bush wall',
     width: 1365,
     height: 2048,
@@ -46,7 +46,7 @@ const album = [
   },
   {
     src: '/photography/005.jpg',
-    alt: '',
+    alt: 'A landscape of an entry point to a cow field, surrounded by bushes',
     caption: 'Cowboy',
     width: 2048,
     height: 1152,
@@ -55,7 +55,7 @@ const album = [
   },
   {
     src: '/photography/006.jpg',
-    alt: '',
+    alt: 'A bench shaded by the sun under a tree',
     caption: 'Lunch spot',
     width: 2048,
     height: 1365,
@@ -64,7 +64,7 @@ const album = [
   },
   {
     src: '/photography/007.jpg',
-    alt: '',
+    alt: 'A black and white photo of a stagnant lake surrounded by trees on an overcast day',
     caption: 'Stagnant',
     width: 2048,
     height: 1152,
@@ -73,7 +73,7 @@ const album = [
   },
   {
     src: '/photography/008.jpg',
-    alt: '',
+    alt: 'A butterfly pollinating a common fleabane, amongst others',
     caption: 'Take a moment and look down Pt. 1',
     width: 2048,
     height: 1152,
@@ -82,7 +82,7 @@ const album = [
   },
   {
     src: '/photography/009.jpg',
-    alt: '',
+    alt: 'A dragonfly sitting on some ryegrass',
     caption: 'Take a moment and look down Pt. 2',
     width: 2048,
     height: 1152,
@@ -91,7 +91,7 @@ const album = [
   },
   {
     src: '/photography/010.jpg',
-    alt: '',
+    alt: 'A butterly pollinating a french broom',
     caption: 'Take a moment and look down Pt. 3',
     width: 1365,
     height: 2048,
@@ -100,7 +100,7 @@ const album = [
   },
   {
     src: '/photography/011.jpg',
-    alt: '',
+    alt: 'Stairs leading down to a railway track',
     caption: 'Do not enter.',
     width: 1365,
     height: 2048,
@@ -109,7 +109,7 @@ const album = [
   },
   {
     src: '/photography/012.jpg',
-    alt: '',
+    alt: 'Two tractors in the distance being driven by farmers transporting haystacks',
     caption: 'A hard day’s work',
     width: 2048,
     height: 1152,
@@ -118,7 +118,7 @@ const album = [
   },
   {
     src: '/photography/013.jpg',
-    alt: '',
+    alt: 'A dirt path heading to the woods',
     caption: 'That day’s moment for epiphany',
     width: 1365,
     height: 2048,
@@ -127,7 +127,7 @@ const album = [
   },
   {
     src: '/photography/014.jpg',
-    alt: '',
+    alt: 'A plank of wood bridging a small canal',
     caption: 'We must cross',
     width: 1365,
     height: 2048,
@@ -136,7 +136,7 @@ const album = [
   },
   {
     src: '/photography/015.jpg',
-    alt: '',
+    alt: 'Some mushrooms growing on a low-stooping tree trunk',
     caption: 'Fungi',
     width: 1365,
     height: 2048,
