@@ -2,12 +2,12 @@ import styles from './styles.module.css';
 import Img from '@/components/atoms/image';
 import Figcaption from '@/components/atoms/figcaption';
 
-export default function Figure({ src, alt, width, height, excerpt, location, device }: {
+export default function Figure({ src, alt, width, height, caption, location, device }: {
   src: string;
   alt: string;
   width: number;
   height: number;
-  excerpt: string;
+  caption: string;
   location: string;
   device: string;
 }) {
@@ -20,7 +20,7 @@ export default function Figure({ src, alt, width, height, excerpt, location, dev
         height={height}
       />
       <Figcaption 
-        excerpt={excerpt}
+        caption={caption}
         location={location}
         device={device}
       />

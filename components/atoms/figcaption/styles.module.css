@@ -4,9 +4,9 @@
 
 .properties > p:first-of-type {
   color: rgb(var(--color-tone-100));
-  font-size: var(--sm);
+  font-size: var(--base);
 }
 
 .properties > p:not(:first-of-type) {
-  font-size: var(--meta);
+  font-size: var(--sm);
 }

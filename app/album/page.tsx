@@ -28,7 +28,7 @@ export default function AlbumPage() {
             alt={photo.alt}
             width={photo.width}
             height={photo.height}
-            excerpt={photo.alt}
+            caption={photo.caption}
             location={photo.location ?? 'Somewhere'}
             device={photo.device}
           />
