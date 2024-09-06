@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 export default function ColophonPage() {
   return (
     <>
-      <section>
+      <header>
         <h1>Mi casa es tu casa</h1>
-      </section>
+      </header>
       <main>
         <ul>
           <li>Typeset in Bricolage Grotesque, Wotfard and Geist Mono.</li>

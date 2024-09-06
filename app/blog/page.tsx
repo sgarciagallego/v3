@@ -13,7 +13,9 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <>
-      <section><h1>Blog</h1></section>
+      <header>
+        <h1>Blog</h1>
+      </header>
       <Posts />
     </>
   );

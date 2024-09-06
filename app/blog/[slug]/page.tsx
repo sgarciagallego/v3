@@ -59,16 +59,18 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <section>
+      <header>
         <Headline>{post.metadata.title}</Headline>
         <Subtitle>{post.metadata.summary}</Subtitle>
         <Meta 
           words={post.content}
           publishDate={post.metadata.publishDate}
         />
-      </section>
+      </header>
       <main>
-        <CustomMDX source={post.content} />
+        <article>
+          <CustomMDX source={post.content} />
+        </article>
       </main>
     </>
   );

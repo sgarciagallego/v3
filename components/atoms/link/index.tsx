@@ -1,6 +1,8 @@
 import styles from './styles.module.css';
 import Link from 'next/link';
 import { social } from '@/lib/social';
+import { work } from '@/lib/constant';
+import Image from 'next/image';
 
 export default function Hyperlink(props: any) {
   const href = props.href;
@@ -47,6 +49,26 @@ export default function Hyperlink(props: any) {
         {props.children}
       </a>
     )
+  }
+
+  if (href === work.currentCompanyHref) {
+    return (
+      <a 
+        target='_blank'
+        rel='noopener noreferrer'
+        aria-label='opens in a new tab'
+        className={styles.label}
+        {...props}
+      >
+        <Image 
+          width={64}
+          height={64}
+          src='/icons/major.svg'
+          alt='Major Digital favicon'
+        />
+        {props.children}
+      </a>
+    );
   }
 
   return (

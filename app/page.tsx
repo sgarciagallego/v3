@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import { siteConfig } from '@/lib/constant';
-import VerticalGrid from '@/components/templates/grid/vertical';
+import { siteConfig, work } from '@/lib/constant';
+import Spacer from '@/components/templates/grid/spacer';
 import Hyperlink from '@/components/atoms/link';
 import PhotoGrid from '@/components/templates/grid/photo';
 import carousel from '@/lib/carousel';
@@ -17,25 +17,25 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <VerticalGrid>
-      <main>
-        <p>I’m a frontend developer based out of Bexhill-on-sea, East Sussex. I currently work as a Design Engineer and Founder at <Hyperlink href='https://originblank.com'>Origin Blank</Hyperlink>, where I help businesses bridge the human-computer divide with <Hyperlink href='https://www.figma.com'>Figma</Hyperlink> and <Hyperlink href='https://react.dev'>React</Hyperlink> frameworks, namely <Hyperlink href='https://nextjs.org'>Next.js</Hyperlink>.</p>
-        <PhotoGrid>
-          {carousel.map((image, index) => (
-            <Img 
-            key={index}
-            src={image.src}
-            alt={image.alt}
-            width={image.width}
-            height={image.height}
-            />
-          ))}
-        </PhotoGrid>
-      </main>
+    <Spacer>
+      <section>
+        <p>I’m a frontend developer based out of Bexhill-on-sea, East Sussex. I currently work as a {work.currentRole} at <Hyperlink href={work.currentCompanyHref}>{work.currentCompany}</Hyperlink>, where I create experiences designed to scale with <Hyperlink href='https://jamstack.org/'>Jamstack architecture</Hyperlink>, and help businesses bridge the human-computer divide with their people.</p>
+      </section>
+      <PhotoGrid>
+        {carousel.map((image, index) => (
+          <Img 
+          key={index}
+          src={image.src}
+          alt={image.alt}
+          width={image.width}
+          height={image.height}
+          />
+        ))}
+      </PhotoGrid>
       <section>
         <p>With this personal site, comes a new chapter: I will be starting my long-awaited blogging journey! I won’t niche down, but you’ll notice that my content reflects my interests at the time.</p>
         <Posts trim />
       </section>
-    </VerticalGrid>
+    </Spacer>
   );
 }

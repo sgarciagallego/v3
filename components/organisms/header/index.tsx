@@ -4,16 +4,16 @@ import styles from './styles.module.css';
 import { usePathname } from 'next/navigation';
 import Name from '@/components/atoms/name';
 import Slogan from '@/components/atoms/slogan';
-import Nav from '@/components/molecules/nav';
+import Navigation from '@/components/molecules/navigation';
 
 export default function Header() {
   const path = usePathname();
 
   return path === '/' ? (
-    <header className={styles.home}>
+    <header className={styles.properties}>
       <Name />
       <Slogan />
-      <Nav />
+      <Navigation />
     </header>
-  ) : <header className={styles.rest}><Nav /></header>;
+  ) : <Navigation />;
 }

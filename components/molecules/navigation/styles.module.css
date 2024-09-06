@@ -1,0 +1,6 @@
+.properties {
+  height: var(--space-x6);
+  margin-bottom: var(--space-x7);
+  display: flex;
+  align-items: center;
+}

@@ -1,5 +1,3 @@
-.properties:not(:last-child) { margin-bottom: var(--space-x6); }
-
 .properties {
   display: grid;
   gap: var(--space-x5);
