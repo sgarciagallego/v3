@@ -12,7 +12,8 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <>
-      <section><h1>Portfolio</h1></section>
+      <header><h1>Portfolio</h1></header>
+      <main id='skip-to-content'></main>
     </>
   );
 }

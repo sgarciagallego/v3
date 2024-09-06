@@ -42,7 +42,7 @@ body {
   line-height: 1.75;
 }
 
-*[id] { scroll-margin-top: var(--space-x6); }
+[id], :target { scroll-margin-top: var(--space-x6); }
 
 p, h1, h2, h3, h4 { overflow-wrap: break-word; }
 

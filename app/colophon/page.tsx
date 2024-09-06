@@ -16,7 +16,7 @@ export default function ColophonPage() {
       <header>
         <h1>Mi casa es tu casa</h1>
       </header>
-      <main>
+      <main id='skip-to-content'>
         <ul>
           <li>Typeset in Bricolage Grotesque, Wotfard and Geist Mono.</li>
           <li>Built with TypeScript using Next.js.</li>

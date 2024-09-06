@@ -20,7 +20,7 @@ export default function WorkPage() {
         <p>If you prefer to dive deep into my commercial case studies, <Hyperlink href='mailto:gallegogarciasergio@gmail.com'>email me</Hyperlink> and I’ll send you the password to my <Hyperlink href='/portfolio'>portfolio</Hyperlink>. If not, here’s a summary of my work so far.</p>
       </header>
       <hr />
-      <main>
+      <main id='skip-to-content'>
         <section>
           <h2>Major Digital</h2>
           <p><small>Web Developer</small></p>

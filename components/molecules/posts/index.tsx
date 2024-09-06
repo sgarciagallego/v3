@@ -10,7 +10,10 @@ export default function Posts({ trim }: { trim?: boolean }) {
   const Element = trim ? 'div' : 'main'
 
   return (
-    <Element className={styles.properties}>
+    <Element 
+      id={trim ? undefined : 'skip-to-content'}
+      className={styles.properties}
+    >
       <List type='ol' axis='vertical'>
         {posts
           .sort((a, b) => new Date(b.metadata.publishDate).getTime() - new Date(a.metadata.publishDate).getTime())
