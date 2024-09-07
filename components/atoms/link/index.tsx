@@ -6,105 +6,77 @@ import Image from 'next/image';
 
 export default function Hyperlink(props: any) {
   const href = props.href;
+  const current = work.currentTech.find((obj) => obj.href === href);
 
   if (href.startsWith('/')) {
-    return (
-      <Link
-        className={styles.properties}
-        {...props}
-      />
-    );
+    return <Link className={styles.properties} {...props} />;
   }
 
   if (href.startsWith('#')) {
-    return (
-      <a
-        className={styles.properties}
-        {...props}
-      />
-    );
+    return <a className={styles.properties} {...props} />;
   }
 
-  if (social.find(obj => obj.href === href)) {
+  if (social.find((obj) => obj.href === href)) {
     return (
-      <a 
-        target='_blank'
-        rel='me noopener noreferrer'
-        aria-label='opens in a new tab'
+      <a
+        target="_blank"
+        rel="me noopener noreferrer"
+        aria-label="opens in a new tab"
         className={`
           ${styles.properties}
           ${styles.social}
         `}
         {...props}
       >
-        <span className={`
+        <span
+          className={`
           ${styles.color}
-          ${styles[
-            social
-              .find(obj => obj.href === href)?.name
-              .toLowerCase() 
-            || ''
-          ]}
-        `} />
+          ${
+            styles[
+              social.find((obj) => obj.href === href)?.name.toLowerCase() || ''
+            ]
+          }
+        `}
+        />
         {props.children}
       </a>
-    )
+    );
   }
 
   if (href === work.currentCompanyHref) {
     return (
-      <a 
-        target='_blank'
-        rel='noopener noreferrer'
-        aria-label='opens in a new tab'
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="opens in a new tab"
         className={styles.label}
         {...props}
       >
-        <Image 
+        <Image
           width={64}
           height={64}
-          src='/ext/major.svg'
-          alt='Major Digital favicon'
+          src={`/ext/${work.currentCompanyImage}`}
+          alt={`${work.currentCompany} favicon`}
         />
         {props.children}
       </a>
     );
   }
 
-  if (href === 'https://react.dev') {
+  if (current) {
     return (
-      <a 
-        target='_blank'
-        rel='noopener noreferrer'
-        aria-label='opens in a new tab'
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="opens in a new tab"
         className={styles.label}
         {...props}
       >
-        <Image 
+        <Image
           width={64}
           height={64}
-          src='/ext/react.svg'
-          alt='React favicon'
-        />
-        {props.children}
-      </a>
-    );
-  }
-
-  if (href === 'https://jamstack.org') {
-    return (
-      <a 
-        target='_blank'
-        rel='noopener noreferrer'
-        aria-label='opens in a new tab'
-        className={styles.label}
-        {...props}
-      >
-        <Image 
-          width={64}
-          height={64}
-          src='/ext/jamstack.svg'
-          alt='Jamstack favicon'
+          src={`/ext/${current.image}`}
+          alt={`${current.name} favicon`}
         />
         {props.children}
       </a>
@@ -112,10 +84,10 @@ export default function Hyperlink(props: any) {
   }
 
   return (
-    <a 
-      target='_blank'
-      rel='noopener noreferrer'
-      aria-label='opens in a new tab'
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="opens in a new tab"
       className={styles.properties}
       {...props}
     />

@@ -10,4 +10,17 @@ export const work = {
   currentRole: 'Web Developer',
   currentCompany: 'Major Digital',
   currentCompanyHref: 'https://majordigital.com',
+  currentCompanyImage: 'major.svg',
+  currentTech: [
+    {
+      name: 'React',
+      href: 'https://react.dev',
+      image: 'react.svg',
+    },
+    {
+      name: 'Jamstack',
+      href: 'https://jamstack.org',
+      image: 'jamstack.svg'
+    },
+  ],
 }
