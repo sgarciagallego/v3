@@ -9,5 +9,5 @@ export const siteConfig = {
 export const work = {
   currentRole: 'Web Developer',
   currentCompany: 'Major Digital',
-  currentCompanyHref: 'https://majordigital.com'
+  currentCompanyHref: 'https://majordigital.com',
 }

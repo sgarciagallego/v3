@@ -19,7 +19,7 @@ export default function HomePage() {
   return (
     <Spacer>
       <section>
-        <p>I’m a frontend developer based out of Bexhill-on-sea, East Sussex. I currently work as a {work.currentRole} at <Hyperlink href={work.currentCompanyHref}>{work.currentCompany}</Hyperlink>, where I create experiences designed to scale with <Hyperlink href='https://jamstack.org/'>Jamstack architecture</Hyperlink>, and help businesses bridge the human-computer divide with their people.</p>
+        <p>I’m a {work.currentRole} based out of Bexhill-on-sea, East Sussex, and currently work at <Hyperlink href={work.currentCompanyHref}>{work.currentCompany}</Hyperlink>. I create experiences designed to scale with <Hyperlink href='https://react.dev'>React</Hyperlink> frameworks and <Hyperlink href='https://jamstack.org'>Jamstack</Hyperlink> architecture to bridge the human-computer divide between business and people.</p>
       </section>
       <PhotoGrid>
         {carousel.map((image, index) => (

@@ -71,6 +71,46 @@ export default function Hyperlink(props: any) {
     );
   }
 
+  if (href === 'https://react.dev') {
+    return (
+      <a 
+        target='_blank'
+        rel='noopener noreferrer'
+        aria-label='opens in a new tab'
+        className={styles.label}
+        {...props}
+      >
+        <Image 
+          width={64}
+          height={64}
+          src='/ext/react.svg'
+          alt='React favicon'
+        />
+        {props.children}
+      </a>
+    );
+  }
+
+  if (href === 'https://jamstack.org') {
+    return (
+      <a 
+        target='_blank'
+        rel='noopener noreferrer'
+        aria-label='opens in a new tab'
+        className={styles.label}
+        {...props}
+      >
+        <Image 
+          width={64}
+          height={64}
+          src='/ext/jamstack.svg'
+          alt='Jamstack favicon'
+        />
+        {props.children}
+      </a>
+    );
+  }
+
   return (
     <a 
       target='_blank'
