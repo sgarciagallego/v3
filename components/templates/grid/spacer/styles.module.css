@@ -1,5 +1,5 @@
 .properties {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   row-gap: var(--space-x6);
 }
