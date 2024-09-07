@@ -63,7 +63,7 @@ export default function Hyperlink(props: any) {
         <Image 
           width={64}
           height={64}
-          src='/icons/major.svg'
+          src='/ext/major.svg'
           alt='Major Digital favicon'
         />
         {props.children}

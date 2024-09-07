@@ -8,10 +8,7 @@ export default function Masonry({
   children: React.ReactNode;
 }) {
   return (
-    <Element 
-      id={Element === 'main' ? 'skip-to-content' : undefined}
-      className={`width-fill ${styles.properties}`}
-    >
+    <Element className={`width-fill ${styles.properties}`}>
       {children}
     </Element>
   );

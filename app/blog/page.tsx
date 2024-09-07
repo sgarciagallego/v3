@@ -3,7 +3,7 @@ import { siteConfig } from '@/lib/constant';
 import Posts from '@/components/molecules/posts';
 
 export const metadata: Metadata = {
-  title: `Blog`,
+  title: 'Blog',
   description: siteConfig.description,
   alternates: {
     canonical: `${siteConfig.url}/blog`,

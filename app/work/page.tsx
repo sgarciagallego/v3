@@ -4,7 +4,7 @@ import Hyperlink from '@/components/atoms/link';
 import List from '@/components/atoms/list';
 
 export const metadata: Metadata = {
-  title: `Work`,
+  title: 'Work',
   description: 'A high-level overview of where Sergio has been and how he got here, but remember to take it with a pinch of salt, because that is all it is...',
   alternates: {
     canonical: `${siteConfig.url}/work`,
@@ -20,7 +20,7 @@ export default function WorkPage() {
         <p>If you prefer to dive deep into my commercial case studies, <Hyperlink href='mailto:gallegogarciasergio@gmail.com'>email me</Hyperlink> and I’ll send you the password to my <Hyperlink href='/portfolio'>portfolio</Hyperlink>. If not, here’s a summary of my work so far.</p>
       </header>
       <hr />
-      <main id='skip-to-content'>
+      <main>
         <section>
           <h2>Major Digital</h2>
           <p><small>Web Developer</small></p>

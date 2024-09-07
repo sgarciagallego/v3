@@ -4,7 +4,7 @@ import Spacer from '@/components/templates/grid/spacer';
 import List from '@/components/atoms/list';
 
 export const metadata: Metadata = {
-  title: `What I use`,
+  title: 'What I use',
   description: 'What Sergio uses on a regular basis to make his life easier, and hopefully yours too!',
   alternates: {
     canonical: `${siteConfig.url}/uses`,

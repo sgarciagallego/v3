@@ -6,7 +6,7 @@ import { redirect } from 'next/navigation';
 import { authOptions } from '@/lib/auth';
 
 export const metadata: Metadata = {
-  title: `Login`,
+  title: 'Login',
   description: 'Well well well. It looks like you’ve bumped into a protected page. Enter the password or else...',
   alternates: {
     canonical: `${siteConfig.url}/login`,

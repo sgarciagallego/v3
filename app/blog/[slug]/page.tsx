@@ -67,7 +67,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
           publishDate={post.metadata.publishDate}
         />
       </header>
-      <main id='skip-to-content'>
+      <main>
         <article>
           <CustomMDX source={post.content} />
         </article>
