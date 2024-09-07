@@ -43,7 +43,7 @@ export default function RootLayout({
     <html lang='en-GB' suppressHydrationWarning>
       <body className={`app ${heading.variable} ${mono.variable} ${sans.variable}`}>
         <Header />
-        {children}
+        <div id='skip-to-content'>{children}</div>
         <Footer />
         <SpeedInsights />
         <Analytics />
