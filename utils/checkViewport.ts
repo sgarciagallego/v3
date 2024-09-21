@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react';
 
-export default function checkViewport() {
-  const [viewportWidth, setViewportWidth] = useState<number | undefined>(undefined);
+export default function useCheckViewport() {
+  const [viewportWidth, setViewportWidth] = useState<number | undefined>(
+    undefined
+  );
 
   useEffect(() => {
-    const updateViewportWidth = () => setViewportWidth(window.innerWidth)
+    const updateViewportWidth = () => setViewportWidth(window.innerWidth);
 
-    updateViewportWidth()
+    updateViewportWidth();
 
-    window.addEventListener('resize', updateViewportWidth)
+    window.addEventListener('resize', updateViewportWidth);
 
-    return () => window.removeEventListener('resize', updateViewportWidth)
+    return () => window.removeEventListener('resize', updateViewportWidth);
   }, []);
 
   return viewportWidth;
-};
+}

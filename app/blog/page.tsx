@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${siteConfig.url}/blog`,
   },
-}
+};
 
 export default function BlogPage() {
   return (

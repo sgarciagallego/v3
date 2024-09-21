@@ -1,4 +1,6 @@
-.properties:not(:last-child) { margin-bottom: 2em; }
+.properties:not(:last-child) {
+  margin-bottom: 2em;
+}
 
 .properties {
   scrollbar-width: 0;
@@ -31,7 +33,7 @@
   text-align: right;
 }
 
-.properties > code > span:nth-last-child(n+10)::before,
-.properties > code > span:nth-last-child(n+10) ~ span::before {
+.properties > code > span:nth-last-child(n + 10)::before,
+.properties > code > span:nth-last-child(n + 10) ~ span::before {
   width: 2ch;
 }

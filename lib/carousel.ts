@@ -35,6 +35,6 @@ const carousel = [
     width: 1280,
     height: 960,
   },
-]
+];
 
 export default carousel;

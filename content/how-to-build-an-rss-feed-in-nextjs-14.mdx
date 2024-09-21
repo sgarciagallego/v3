@@ -14,8 +14,8 @@ So, what’s the solution? For me, it was:
 1. A **realisation** of the time that was being taken from me per day.
 2. A **digital detox**, where I deleted my Reddit, Instagram and TikTok accounts, as well as factory reset my phone and only installed the essential apps.
 3. **Integrate a routine** into daily life. For me, that was a morning routine inspired by [Andrew Huberman](https://www.flashhub.io/andrew-hubermans-morning-routine) that I track using [Routinery](https://routinery.app).
-3. **Installed [Mastodon](https://joinmastodon.org)** to post my photography and blogs for those interested, without the hit of dopamine an algorithm brings.
-4. **Set up [Reeder](https://reeder.app/classic)** to keep in touch with the news and personalities I’m interested in.
+4. **Installed [Mastodon](https://joinmastodon.org)** to post my photography and blogs for those interested, without the hit of dopamine an algorithm brings.
+5. **Set up [Reeder](https://reeder.app/classic)** to keep in touch with the news and personalities I’m interested in.
 
 An RSS feed reader (such as Reeder) allows the user to subscribe to content from a supported website. The cool thing about RSS is that much like Mastodon, **it operates without an algorithm**, resulting in a 100% user-controlled feed. If you would like a head start with RSS, here are some [popular personalities in the tech world that support RSS feeds](/uses#following).
 
@@ -31,16 +31,12 @@ Inside the `app` directory, create a new file called `sitemap.ts` and add the fo
 import { MetadataRoute } from 'next';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const root = process.env.NODE_ENV === 'production' 
-    ? 'https://yourwebsite.com' // replace with your website homepage
-    : 'http://localhost:3000';
+  const root =
+    process.env.NODE_ENV === 'production'
+      ? 'https://yourwebsite.com' // replace with your website homepage
+      : 'http://localhost:3000';
 
-  const routes = [
-    '/',
-    '/about',
-    '/services',
-    '/contact',
-  ].map((route) => ({
+  const routes = ['/', '/about', '/services', '/contact'].map((route) => ({
     url: `${root}${route}`,
     lastModified: new Date().toISOString().split('T')[0],
   }));
@@ -53,7 +49,7 @@ Here, we’ve created a new sitemap which contains an array of static website pa
 
 There are no `priority` or `changeFrequency` properties, as [Google ignores these](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap#additional-notes-about-xml-sitemaps), but feel free to add them if necessary.
 
-Now, when heading to `http://localhost:3000/sitemap.xml`, the sitemap should appear! 
+Now, when heading to `http://localhost:3000/sitemap.xml`, the sitemap should appear!
 
 ![A screenshot of a generated sitemap](/blog/02/01.png)
 
@@ -64,9 +60,10 @@ import { MetadataRoute } from 'next';
 import { getPosts } from '@/lib/posts';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const root = process.env.NODE_ENV === 'production' 
-    ? 'https://yourwebsite.com' // change with your website
-    : 'http://localhost:3000';
+  const root =
+    process.env.NODE_ENV === 'production'
+      ? 'https://yourwebsite.com' // change with your website
+      : 'http://localhost:3000';
 
   const routes = ['/', '/about', '/services', '/contact'].map((route) => ({
     url: `${root}${route}`,
@@ -75,12 +72,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const posts = await getPosts();
 
-  posts.forEach(post => {
+  posts.forEach((post) => {
     routes.push({
       url: `${root}/blog/${post.slug}`,
       lastModified: new Date(post.publishDate).toISOString().split('T')[0],
-    })
-  })
+    });
+  });
 
   return routes;
 }
@@ -136,12 +133,12 @@ Now let’s start configuring the feed! Firstly, update the `GET()` function by 
 
 ```typescript
 export async function GET() {
-  const root = process.env.NODE_ENV === 'production' 
+  const root = process.env.NODE_ENV === 'production'
     ? 'https://yourwebsite.com' // change with your website
     : 'http://localhost:3000';
 
   ...
-  
+
   return new Response('<Feed>', {
     headers: {
       'Content-Type': 'application/atom+xml; charset=utf-8',
@@ -202,8 +199,8 @@ posts.map((post) => {
     guid: `${root}/blog/${post.slug}`,
     url: `${root}/blog/${post.slug}`,
     date: new Date(post.publishDate),
-  })
-})
+  });
+});
 ```
 
 ...and of course, ensure your function that fetches posts is imported...
@@ -212,7 +209,7 @@ posts.map((post) => {
 import { getPosts } from '@/lib/posts';
 ```
 
-Of course, the properties included are not exhaustive. Adjust these as needed, [adding any additional properties](https://www.rssboard.org/rss-draft-1) that may be useful. 
+Of course, the properties included are not exhaustive. Adjust these as needed, [adding any additional properties](https://www.rssboard.org/rss-draft-1) that may be useful.
 
 Upon visiting rss.xml on the site, the posts should be there to greet you!
 
@@ -223,7 +220,8 @@ Now, all that is left is toallow search engines and crawlers to locate the RSS f
 ```typescript
 import type { Metadata } from 'next';
 
-const root = process.env.NODE_ENV === 'production' 
+const root =
+  process.env.NODE_ENV === 'production'
     ? 'https://yourwebsite.com' // change with your website
     : 'http://localhost:3000';
 
@@ -232,14 +230,18 @@ export const metadata: Metadata = {
     types: {
       'application/rss+xml': `${root}/rss.xml`,
     },
-  }
+  },
 };
 ```
 
 ...which renders...
 
 ```html
-<link rel="alternate" type="application/rss+xml" href="http://localhost:3000/rss.xml" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  href="http://localhost:3000/rss.xml"
+/>
 ```
 
 Once the RSS feed is published, it can be [validated](https://validator.w3.org/feed) to ensure it’s discoverable.
@@ -250,6 +252,6 @@ To recap, we’ve learned how to set up and configure an RSS feed in harmony wit
 
 I had a nice time learning about RSS feeds, and the good integrating one is for the wider community. However, I never like having to install a dependency to get a job done, so hopefully Vercel brings support for in-house RSS solutions without the need for a dependency in Next.js.
 
-You can also check out the [Github repository](https://github.com/sgarciagallego/next-rss-feed) for the full source code if you get stuck and need a refresh from the long-form content. 
+You can also check out the [Github repository](https://github.com/sgarciagallego/next-rss-feed) for the full source code if you get stuck and need a refresh from the long-form content.
 
 It was a blast, onwards and upwards!

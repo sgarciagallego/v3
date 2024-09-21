@@ -1,6 +1,10 @@
 import styles from './styles.module.css';
 
-export default function Figcaption({ caption, location, device }: {
+export default function Figcaption({
+  caption,
+  location,
+  device,
+}: {
   caption: string;
   location: string;
   device: string;
@@ -8,8 +12,14 @@ export default function Figcaption({ caption, location, device }: {
   return (
     <figcaption className={styles.properties}>
       <p>{caption}</p>
-      <p>{'@ '}{location}</p>
-      <p>{'Shot on '}{device}</p>
+      <p>
+        {'@ '}
+        {location}
+      </p>
+      <p>
+        {'Shot on '}
+        {device}
+      </p>
     </figcaption>
-  )
+  );
 }

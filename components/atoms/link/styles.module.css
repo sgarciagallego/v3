@@ -30,11 +30,21 @@
   height: var(--space-x4);
 }
 
-.github { background: rgb(var(--color-brand-github)); }
-.linkedin { background: rgb(var(--color-brand-linkedin)); }
-.mastodon { background: rgb(var(--color-brand-mastodon)); }
-.rss { background: rgb(var(--color-tone-100)); }
-.substack { background: rgb(var(--color-brand-substack)); }
+.github {
+  background: rgb(var(--color-brand-github));
+}
+.linkedin {
+  background: rgb(var(--color-brand-linkedin));
+}
+.mastodon {
+  background: rgb(var(--color-brand-mastodon));
+}
+.rss {
+  background: rgb(var(--color-tone-100));
+}
+.substack {
+  background: rgb(var(--color-brand-substack));
+}
 
 .label {
   height: 1.75em;
@@ -42,13 +52,13 @@
   border: var(--space-x1) solid rgb(var(--color-border));
   border-radius: var(--curve-parent);
   padding: var(--padding-layer);
-  display:inline-flex;
+  display: inline-flex;
   align-items: center;
   vertical-align: middle;
   gap: var(--space-x3);
   background: rgb(var(--color-background-layer));
   color: rgb(var(--color-tone-100));
-  font-size: .9375em;
+  font-size: 0.9375em;
   text-decoration: none;
   line-height: normal;
 }
@@ -60,11 +70,13 @@
   border-radius: var(--curve-child);
 }
 
-.label:hover { background: rgb(var(--color-background-layer_hover)); }
+.label:hover {
+  background: rgb(var(--color-background-layer_hover));
+}
 
-.label:focus-visible { 
+.label:focus-visible {
   outline: none;
-  border: var(--space-x1) solid rgb(var(--color-tone-100)); 
+  border: var(--space-x1) solid rgb(var(--color-tone-100));
   background: rgb(var(--color-background-layer_hover));
 }
 

@@ -4,7 +4,13 @@ import localFont from 'next/font/local';
 export const heading = Bricolage_Grotesque({
   subsets: ['latin'],
   display: 'swap',
-  fallback: ['system-ui', '-apple-system', 'Open Sans', 'Helvetica Neue', 'sans-serif'],
+  fallback: [
+    'system-ui',
+    '-apple-system',
+    'Open Sans',
+    'Helvetica Neue',
+    'sans-serif',
+  ],
   variable: '--heading',
 });
 
@@ -70,6 +76,12 @@ export const sans = localFont({
     },
   ],
   display: 'swap',
-  fallback: ['system-ui', '-apple-system', 'Open Sans', 'Helvetica Neue', 'sans-serif'],
+  fallback: [
+    'system-ui',
+    '-apple-system',
+    'Open Sans',
+    'Helvetica Neue',
+    'sans-serif',
+  ],
   variable: '--sans',
 });

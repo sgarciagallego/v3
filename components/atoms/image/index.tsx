@@ -27,7 +27,7 @@ export default async function Img(props: ImgProps) {
       {...props}
       quality={100}
       alt={props.alt || ''}
-      placeholder='blur'
+      placeholder="blur"
       blurDataURL={blurDataURL}
       width={width}
       height={height}

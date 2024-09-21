@@ -5,11 +5,12 @@ import List from '@/components/atoms/list';
 
 export const metadata: Metadata = {
   title: 'What I use',
-  description: 'What Sergio uses on a regular basis to make his life easier, and hopefully yours too!',
+  description:
+    'What Sergio uses on a regular basis to make his life easier, and hopefully yours too!',
   alternates: {
     canonical: `${siteConfig.url}/uses`,
   },
-}
+};
 
 export default function UsesPage() {
   return (
@@ -21,8 +22,8 @@ export default function UsesPage() {
       <hr />
       <Spacer>
         <section>
-          <h2 id='office'>Home office</h2>
-          <List axis='vertical' type='ul'>
+          <h2 id="office">Home office</h2>
+          <List axis="vertical" type="ul">
             <li>14{'"'} Macbook Pro (2021)</li>
             <li>Logitech MX Master 3</li>
             <li>28{'"'} Philips 288E2UAE</li>
@@ -30,12 +31,14 @@ export default function UsesPage() {
             <li>Custom Grafeio Desk by PastosCo</li>
             <li>Sihoo Doro C300 Ergonomic Chair</li>
             <li>Custom Build PC (post coming soon)</li>
-            <li>IQUNIX ZX75 Gravity Wave 75% Keyboard w/ Moonstone Turbo switches</li>
+            <li>
+              IQUNIX ZX75 Gravity Wave 75% Keyboard w/ Moonstone Turbo switches
+            </li>
           </List>
         </section>
         <section>
-          <h2 id='coding'>Coding</h2>
-          <List axis='vertical' type='ul'>
+          <h2 id="coding">Coding</h2>
+          <List axis="vertical" type="ul">
             <li>Visual Studio Code</li>
             <li>Theme: One Dark Pro</li>
             <li>Type: Dank Mono or SF Mono</li>
@@ -43,24 +46,24 @@ export default function UsesPage() {
           </List>
         </section>
         <section>
-          <h2 id='home'>Home</h2>
-          <List axis='vertical' type='ul'>
+          <h2 id="home">Home</h2>
+          <List axis="vertical" type="ul">
             <li>Eufy Robovac 15C Max</li>
             <li>Philips Ambilight</li>
             <li>TP Link Tapo L510B Dimmable Smart Lights</li>
           </List>
         </section>
         <section>
-          <h2 id='photography'>Photography</h2>
-          <List axis='vertical' type='ul'>
+          <h2 id="photography">Photography</h2>
+          <List axis="vertical" type="ul">
             <li>Fujifilm X-S10</li>
             <li>Tamron 17-70mm f2.8 Zoom Lens</li>
             <li>Manfrotto 290 Light</li>
           </List>
         </section>
         <section>
-          <h2 id='software'>Software</h2>
-          <List axis='vertical' type='ul'>
+          <h2 id="software">Software</h2>
+          <List axis="vertical" type="ul">
             <li>Spotify</li>
             <li>Aldente</li>
             <li>Figma</li>
@@ -70,8 +73,8 @@ export default function UsesPage() {
           </List>
         </section>
         <section>
-          <h2 id='following'>Following</h2>
-          <List axis='vertical' type='ul'>
+          <h2 id="following">Following</h2>
+          <List axis="vertical" type="ul">
             <li>Josh W Comeau</li>
             <li>Kent C. Dodds</li>
             <li>Alex Chan</li>
@@ -82,8 +85,8 @@ export default function UsesPage() {
           </List>
         </section>
         <section>
-          <h2 id='other'>Other tech</h2>
-          <List axis='vertical' type='ul'>
+          <h2 id="other">Other tech</h2>
+          <List axis="vertical" type="ul">
             <li>Apple iPhone</li>
             <li>Apple Airpods Pro</li>
             <li>Fitbit Sense 2</li>

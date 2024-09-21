@@ -5,8 +5,12 @@
 }
 
 @media (min-width: 320px) and (max-width: 479px) {
-  .properties { height: var(--space-x7); }
+  .properties {
+    height: var(--space-x7);
+  }
 }
 @media (min-width: 480px) {
-  .properties { height: var(--space-x6); }
+  .properties {
+    height: var(--space-x6);
+  }
 }

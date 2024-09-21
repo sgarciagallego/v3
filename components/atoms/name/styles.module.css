@@ -10,18 +10,24 @@
 }
 
 @keyframes bubble {
-  0% { transform: translateZ(-100px); }
-  50% { transform: translateZ(90px); }
-  100% { transform: translateZ(0); }
+  0% {
+    transform: translateZ(-100px);
+  }
+  50% {
+    transform: translateZ(90px);
+  }
+  100% {
+    transform: translateZ(0);
+  }
 }
 
 @keyframes rise {
-  0% { 
-    transform: translateY(var(--space-x7)); 
+  0% {
+    transform: translateY(var(--space-x7));
     background: rgb(var(--color-background));
   }
-  100% { 
-    transform: translateY(0); 
+  100% {
+    transform: translateY(0);
     background: rgb(var(--color-background), 0);
   }
 }
@@ -32,8 +38,8 @@
   animation-name: rise;
   animation-duration: 1s;
   perspective: 500px;
-  animation-timing-function: cubic-bezier(.5,.25,.1,.995);
-  animation-delay: calc(1s + 1.25s + .2s);
+  animation-timing-function: cubic-bezier(0.5, 0.25, 0.1, 0.995);
+  animation-delay: calc(1s + 1.25s + 0.2s);
   animation-fill-mode: both;
   white-space: pre;
 }
@@ -57,7 +63,7 @@
   display: inline-block;
   animation-name: curtain, bubble;
   animation-duration: 1s, 1.25s;
-  animation-timing-function: cubic-bezier(.5,.25,.1,.995);
+  animation-timing-function: cubic-bezier(0.5, 0.25, 0.1, 0.995);
   animation-delay: 0s, calc(1s + var(--delay, 0s));
   animation-fill-mode: forwards;
 }

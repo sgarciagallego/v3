@@ -7,13 +7,17 @@ import formatDate from '@/utils/formatDate';
 
 export default function Posts({ trim }: { trim?: boolean }) {
   const posts = getPosts();
-  const Element = trim ? 'div' : 'main'
+  const Element = trim ? 'div' : 'main';
 
   return (
     <Element className={styles.properties}>
-      <List type='ol' axis='vertical'>
+      <List type="ol" axis="vertical">
         {posts
-          .sort((a, b) => new Date(b.metadata.publishDate).getTime() - new Date(a.metadata.publishDate).getTime())
+          .sort(
+            (a, b) =>
+              new Date(b.metadata.publishDate).getTime() -
+              new Date(a.metadata.publishDate).getTime()
+          )
           .slice(0, trim ? 4 : undefined)
           .map((post) => (
             <li key={post.slug}>
@@ -28,11 +32,10 @@ export default function Posts({ trim }: { trim?: boolean }) {
                 </p>
               </Hyperlink>
             </li>
-          )
-        )}
+          ))}
       </List>
-      {(trim && posts.length >= 4) && (
-        <Hyperlink href='/blog'>View all</Hyperlink>
+      {trim && posts.length >= 4 && (
+        <Hyperlink href="/blog">View all</Hyperlink>
       )}
     </Element>
   );

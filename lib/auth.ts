@@ -16,7 +16,7 @@ export const authOptions: NextAuthOptions = {
           return { id: '0' };
         } else {
           return null;
-        };
+        }
       },
     }),
   ],

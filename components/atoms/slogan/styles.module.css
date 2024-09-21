@@ -3,7 +3,7 @@
     opacity: 0;
     transform: translateY(calc(var(--space-x5) - var(--space-x6)));
   }
-  100% { 
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
@@ -36,7 +36,7 @@
   white-space: pre;
   animation-name: fall;
   animation-duration: 1s;
-  animation-timing-function: cubic-bezier(.5,.25,.1,.995);
-  animation-delay: calc(1s + 1.25s + .2s + var(--delay, 0s));
+  animation-timing-function: cubic-bezier(0.5, 0.25, 0.1, 0.995);
+  animation-delay: calc(1s + 1.25s + 0.2s + var(--delay, 0s));
   animation-fill-mode: both;
 }

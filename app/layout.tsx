@@ -32,7 +32,7 @@ export const generateMetadata = (): Metadata => ({
     description: siteConfig.description,
     card: 'summary_large_image',
   },
-})
+});
 
 export default function RootLayout({
   children,
@@ -40,10 +40,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en-GB' suppressHydrationWarning>
-      <body className={`app ${heading.variable} ${mono.variable} ${sans.variable}`}>
+    <html lang="en-GB" suppressHydrationWarning>
+      <body
+        className={`app ${heading.variable} ${mono.variable} ${sans.variable}`}
+      >
         <Header />
-        <div id='skip-to-content'>{children}</div>
+        <div id="skip-to-content">{children}</div>
         <Footer />
         <SpeedInsights />
         <Analytics />

@@ -1,5 +1,5 @@
 import createHeading from './heading';
-import Code from './code'
+import Code from './code';
 import CodeBlock from './codeblock';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Hyperlink from '../link';
@@ -11,7 +11,7 @@ const components = {
   a: Hyperlink,
   code: Code,
   pre: CodeBlock,
-}
+};
 
 export function CustomMDX(props: any) {
   return (

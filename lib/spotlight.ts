@@ -9,7 +9,7 @@ export const spotlight = [
   },
   {
     name: 'Origin Blank',
-    href: 'https://originblank.com'
+    href: 'https://originblank.com',
   },
   {
     name: 'React',

@@ -7,7 +7,7 @@ export default function Slogan() {
   return (
     <h2 className={styles.properties}>
       {words.map((word, index) => (
-        <span 
+        <span
           key={index}
           style={{ '--delay': `${index * 115}ms` } as React.CSSProperties}
         >

@@ -6,15 +6,10 @@ import Hyperlink from '@/components/atoms/link';
 export default function Footer() {
   return (
     <footer className={styles.properties}>
-      <List 
-        type='ul'
-        axis='horizontal'
-      >
-        {social.map(obj => (
+      <List type="ul" axis="horizontal">
+        {social.map((obj) => (
           <li key={obj.name.toLowerCase()}>
-            <Hyperlink href={obj.href}>
-              {obj.name}
-            </Hyperlink>
+            <Hyperlink href={obj.href}>{obj.name}</Hyperlink>
           </li>
         ))}
       </List>

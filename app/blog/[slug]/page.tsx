@@ -37,9 +37,7 @@ export async function generateMetadata({
       type: 'article',
       publishedTime,
       url: `${siteConfig.url}/blog/${post.slug}`,
-      images: [
-        { url: ogImage, },
-      ],
+      images: [{ url: ogImage }],
     },
     twitter: {
       card: 'summary_large_image',
@@ -62,10 +60,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
       <header>
         <Headline>{post.metadata.title}</Headline>
         <Subtitle>{post.metadata.summary}</Subtitle>
-        <Meta 
-          words={post.content}
-          publishDate={post.metadata.publishDate}
-        />
+        <Meta words={post.content} publishDate={post.metadata.publishDate} />
       </header>
       <main>
         <article>

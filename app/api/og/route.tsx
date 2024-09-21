@@ -8,9 +8,7 @@ export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl;
 
   const hasTitle = searchParams.has('title');
-  const title = hasTitle
-    ? searchParams.get('title')
-    : 'Default title';
+  const title = hasTitle ? searchParams.get('title') : 'Default title';
 
   const font = fetch(
     new URL('../../../fonts/static/og.ttf', import.meta.url)

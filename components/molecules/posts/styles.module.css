@@ -1,16 +1,17 @@
-
-.properties ol { 
+.properties ol {
   padding-inline-start: 0;
-  list-style-type: ''; 
+  list-style-type: '';
 }
 
-.properties ol a { text-decoration: none; }
+.properties ol a {
+  text-decoration: none;
+}
 
-.properties h2 { 
+.properties h2 {
   width: fit-content;
   margin-bottom: 0;
   font-family: var(--sans);
-  font-size: var(--base); 
+  font-size: var(--base);
   font-weight: 400;
   line-height: 1.75;
   letter-spacing: normal;
@@ -21,7 +22,9 @@
   font-size: var(--sm);
 }
 
-div.properties > p { margin-bottom: var(--space-x6) !important; }
+div.properties > p {
+  margin-bottom: var(--space-x6) !important;
+}
 
 div.properties ol {
   display: grid;
@@ -38,7 +41,9 @@ div.properties ol:not(:last-child) {
   }
 }
 
-div.properties li { margin-bottom: 0 !important; }
+div.properties li {
+  margin-bottom: 0 !important;
+}
 
 div.properties ol a {
   display: block;
@@ -58,9 +63,13 @@ div.properties ol a:active > h2 {
   background: rgb(var(--color-background-layer_hover));
 }
 
-main.properties li:not(:last-child) { margin-bottom: var(--space-x5); }
+main.properties li:not(:last-child) {
+  margin-bottom: var(--space-x5);
+}
 
-main.properties ol a:hover > h2 { background: rgb(var(--color-background_hover)); }
+main.properties ol a:hover > h2 {
+  background: rgb(var(--color-background_hover));
+}
 
 main.properties ol a:active > h2,
 main.properties ol a:focus-visible > h2 {

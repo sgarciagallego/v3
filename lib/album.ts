@@ -6,7 +6,7 @@ const album = [
     width: 1365,
     height: 2048,
     location: 'Combe Valley, East Sussex',
-    device: 'Fujifilm X-S10'
+    device: 'Fujifilm X-S10',
   },
   {
     src: '/photography/001.jpg',
@@ -15,7 +15,7 @@ const album = [
     width: 1365,
     height: 2048,
     location: 'Combe Valley, East Sussex',
-    device: 'Fujifilm X-S10'
+    device: 'Fujifilm X-S10',
   },
   {
     src: '/photography/002.jpg',
@@ -24,7 +24,7 @@ const album = [
     width: 1365,
     height: 2048,
     location: 'Combe Valley, East Sussex',
-    device: 'Fujifilm X-S10'
+    device: 'Fujifilm X-S10',
   },
   {
     src: '/photography/003.jpg',
@@ -33,7 +33,7 @@ const album = [
     width: 1365,
     height: 2048,
     location: 'Combe Valley, East Sussex',
-    device: 'Fujifilm X-S10'
+    device: 'Fujifilm X-S10',
   },
   {
     src: '/photography/004.jpg',
@@ -42,7 +42,7 @@ const album = [
     width: 1365,
     height: 2048,
     location: 'Combe Valley, East Sussex',
-    device: 'Fujifilm X-S10'
+    device: 'Fujifilm X-S10',
   },
   {
     src: '/photography/005.jpg',
@@ -51,7 +51,7 @@ const album = [
     width: 2048,
     height: 1152,
     location: 'Combe Valley, East Sussex',
-    device: 'Fujifilm X-S10'
+    device: 'Fujifilm X-S10',
   },
   {
     src: '/photography/006.jpg',
@@ -60,7 +60,7 @@ const album = [
     width: 2048,
     height: 1365,
     location: 'Combe Valley, East Sussex',
-    device: 'Fujifilm X-S10'
+    device: 'Fujifilm X-S10',
   },
   {
     src: '/photography/007.jpg',
@@ -69,7 +69,7 @@ const album = [
     width: 2048,
     height: 1152,
     location: 'Combe Valley, East Sussex',
-    device: 'Fujifilm X-S10'
+    device: 'Fujifilm X-S10',
   },
   {
     src: '/photography/008.jpg',
@@ -78,7 +78,7 @@ const album = [
     width: 2048,
     height: 1152,
     location: 'Combe Valley, East Sussex',
-    device: 'Fujifilm X-S10'
+    device: 'Fujifilm X-S10',
   },
   {
     src: '/photography/009.jpg',
@@ -87,7 +87,7 @@ const album = [
     width: 2048,
     height: 1152,
     location: 'Combe Valley, East Sussex',
-    device: 'Fujifilm X-S10'
+    device: 'Fujifilm X-S10',
   },
   {
     src: '/photography/010.jpg',
@@ -96,7 +96,7 @@ const album = [
     width: 1365,
     height: 2048,
     location: 'Combe Valley, East Sussex',
-    device: 'Fujifilm X-S10'
+    device: 'Fujifilm X-S10',
   },
   {
     src: '/photography/011.jpg',
@@ -105,7 +105,7 @@ const album = [
     width: 1365,
     height: 2048,
     location: 'Combe Valley, East Sussex',
-    device: 'Fujifilm X-S10'
+    device: 'Fujifilm X-S10',
   },
   {
     src: '/photography/012.jpg',
@@ -114,7 +114,7 @@ const album = [
     width: 2048,
     height: 1152,
     location: 'Combe Valley, East Sussex',
-    device: 'Fujifilm X-S10'
+    device: 'Fujifilm X-S10',
   },
   {
     src: '/photography/013.jpg',
@@ -123,7 +123,7 @@ const album = [
     width: 1365,
     height: 2048,
     location: 'Combe Valley, East Sussex',
-    device: 'Fujifilm X-S10'
+    device: 'Fujifilm X-S10',
   },
   {
     src: '/photography/014.jpg',
@@ -132,7 +132,7 @@ const album = [
     width: 1365,
     height: 2048,
     location: 'Combe Valley, East Sussex',
-    device: 'Fujifilm X-S10'
+    device: 'Fujifilm X-S10',
   },
   {
     src: '/photography/015.jpg',
@@ -141,8 +141,8 @@ const album = [
     width: 1365,
     height: 2048,
     location: 'Combe Valley, East Sussex',
-    device: 'Fujifilm X-S10'
+    device: 'Fujifilm X-S10',
   },
-]
+];
 
 export default album;

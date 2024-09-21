@@ -25,7 +25,10 @@ function wordCounter(input: string): number {
   return wordCount;
 }
 
-export default function counter(content: string, wordsPerMinute: number = 238): string {
+export default function counter(
+  content: string,
+  wordsPerMinute: number = 238
+): string {
   const wordCount = wordCounter(content);
   const minutes = Math.ceil(wordCount / wordsPerMinute);
   return `${minutes} min read`;

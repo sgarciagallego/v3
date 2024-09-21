@@ -7,9 +7,9 @@ type Metadata = {
   description: string;
   publishDate: string;
   image?: string;
-}
+};
 
-function parseFrontmatter( fileContent: string ) {
+function parseFrontmatter(fileContent: string) {
   const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
   const match = frontmatterRegex.exec(fileContent);
   const frontmatterBlock = match![1];

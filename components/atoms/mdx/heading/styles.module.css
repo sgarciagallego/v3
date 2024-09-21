@@ -6,7 +6,10 @@
   left: 0;
 }
 
-.properties, .properties > a { cursor: pointer; }
+.properties,
+.properties > a {
+  cursor: pointer;
+}
 
 .properties > a {
   width: 1px;
@@ -20,7 +23,7 @@
 
 .properties > a:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 var(--space-xsm) rgb(var(--color-text))
+  box-shadow: 0 0 0 var(--space-xsm) rgb(var(--color-text));
 }
 
 .properties > a:focus-visible,

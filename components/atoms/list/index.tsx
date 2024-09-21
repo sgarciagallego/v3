@@ -1,9 +1,9 @@
 import styles from './styles.module.css';
 
-export default function List({ 
-  type, 
-  axis, 
-  children 
+export default function List({
+  type,
+  axis,
+  children,
 }: {
   type: 'ul' | 'ol';
   axis: 'horizontal' | 'vertical';
@@ -12,12 +12,13 @@ export default function List({
   const Element = type;
 
   return (
-    <Element className={`
+    <Element
+      className={`
       ${styles.properties}
-      ${axis === 'horizontal' 
-        ? styles.horizontal 
-        : styles.vertical
-      }
-    `}>{children}</Element>
+      ${axis === 'horizontal' ? styles.horizontal : styles.vertical}
+    `}
+    >
+      {children}
+    </Element>
   );
 }

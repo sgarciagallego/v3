@@ -22,8 +22,8 @@ export async function GET() {
       guid: `${siteConfig.url}/blog/${post.slug}`,
       url: `${siteConfig.url}/blog/${post.slug}`,
       date: new Date(post.metadata.publishDate),
-    })
-  })
+    });
+  });
 
   return new Response(feed.xml({ indent: true }), {
     headers: {
