@@ -4,4 +4,4 @@ export default withAuth({
   secret: process.env.NEXTAUTH_SECRET,
 });
 
-export const config = { matcher: ['/portfolio/:path*'], };
+export const config = { matcher: ['/portfolio/:path*'] };
