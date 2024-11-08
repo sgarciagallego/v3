@@ -1,3 +1,7 @@
+@import './base/palette.css';
+@import './base/spacing.css';
+@import './base/typography.css';
+
 *,
 *::before,
 *::after {
@@ -26,7 +30,3 @@ svg {
   display: block;
   max-width: 100%;
 }
-
-@import './base/palette.css';
-@import './base/spacing.css';
-@import './base/typography.css';
