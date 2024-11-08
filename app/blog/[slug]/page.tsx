@@ -10,10 +10,9 @@ import { CustomMDX } from '@/components/atoms/mdx';
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }): Promise<Metadata | undefined> {
-  const resolvedParams = await params;
-  let post = getPosts().find((post) => post.slug === resolvedParams.slug);
+  let post = getPosts().find((post) => post.slug === params.slug);
 
   if (!post) {
     return;
@@ -52,10 +51,9 @@ export async function generateMetadata({
 export default async function PostPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }) {
-  const resolvedParams = await params;
-  const post = getPosts().find((post) => post.slug === resolvedParams.slug);
+  const post = getPosts().find((post) => post.slug === params.slug);
 
   if (!post) {
     notFound();

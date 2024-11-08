@@ -25,7 +25,7 @@ export default async function LoginPage() {
   const csrfTokenCookie = `${
     process.env.NODE_ENV == 'production' ? '__Host-' : ''
   }next-auth.csrf-token`;
-  const csrfToken = (await cookieStore).get(csrfTokenCookie)?.value.split('|')[0];
+  const csrfToken = cookieStore.get(csrfTokenCookie)?.value.split('|')[0];
 
   return (
     <main>
