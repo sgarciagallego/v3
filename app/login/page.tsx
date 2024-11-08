@@ -4,6 +4,7 @@ import { getServerSession } from 'next-auth';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { authOptions } from '@/lib/auth';
+import Prompt from '@/components/atoms/prompt';
 
 export const metadata: Metadata = {
   title: 'Login',
@@ -38,6 +39,7 @@ export default async function LoginPage() {
         <label htmlFor="password">
           <h1 aria-label="Log in">🔐</h1>
         </label>
+        <Prompt>{'Oh no, that’s not quite right!'}</Prompt>
         <input
           id="password"
           name="password"

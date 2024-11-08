@@ -141,6 +141,7 @@ input {
   margin-bottom: var(--space-x4);
   border-color: rgb(var(--color-border));
   background: rgb(var(--color-background-layer));
+  color: rgb(var(--color-tone-90));
   font-family: var(--mono);
   font-weight: 900;
   text-align: center;

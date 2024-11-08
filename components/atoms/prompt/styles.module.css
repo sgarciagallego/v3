@@ -1,0 +1,8 @@
+.properties {
+  margin-bottom: var(--space-x4) !important;
+  font-size: var(--sm);
+}
+
+.error {
+  color: var(--sh-keyword);
+}
