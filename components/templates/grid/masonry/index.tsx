@@ -1,13 +1,15 @@
 import styles from './styles.module.css';
 
 export default function Masonry({
-  element: Element = 'div',
+  element: Component = 'div',
   children,
 }: {
-  element?: keyof JSX.IntrinsicElements;
+  element?: React.ElementType;
   children: React.ReactNode;
 }) {
   return (
-    <Element className={`width-fill ${styles.properties}`}>{children}</Element>
+    <Component className={`width-fill ${styles.properties}`}>
+      {children}
+    </Component>
   );
 }
