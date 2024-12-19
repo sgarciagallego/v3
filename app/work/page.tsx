@@ -94,7 +94,7 @@ export default function WorkPage() {
               front-end development and web accessibility.
             </li>
             <li>
-              In 2023, I was promoted to Design Engineer, and led in a fListl{' '}
+              In 2023, I was promoted to Design Engineer, and led in a{' '}
               <Hyperlink href="https://www.instagram.com/p/CwNAOFILdw1">
                 rebrand
               </Hyperlink>

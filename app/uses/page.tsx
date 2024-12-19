@@ -40,9 +40,10 @@ export default function UsesPage() {
           <h2 id="coding">Coding</h2>
           <List axis="vertical" type="ul">
             <li>Visual Studio Code</li>
-            <li>Theme: One Dark Pro</li>
-            <li>Type: Dank Mono or SF Mono</li>
+            <li>Theme: Monokai Pro</li>
+            <li>Type: Dank Mono, SF Mono, or Cartograph CF</li>
             <li>Terminal: MacOS w/ Oh My Zsh</li>
+            <li>Helpers: Github Copilot and ChatGPT</li>
           </List>
         </section>
         <section>
@@ -57,7 +58,8 @@ export default function UsesPage() {
           <h2 id="photography">Photography</h2>
           <List axis="vertical" type="ul">
             <li>Fujifilm X-S10</li>
-            <li>Tamron 17-70mm f2.8 Zoom Lens</li>
+            <li>Tamron 17-70mm F/2.8 Di III-A VC RXD Zoom Lens</li>
+            <li>Fujinon XF23mm F/1.4 R LM WR Prime Lens</li>
             <li>Manfrotto 290 Light</li>
           </List>
         </section>
@@ -70,6 +72,7 @@ export default function UsesPage() {
             <li>Capture One</li>
             <li>Routinery</li>
             <li>Reeder 5</li>
+            <li>Bear Notes</li>
           </List>
         </section>
         <section>
