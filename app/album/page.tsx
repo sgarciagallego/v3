@@ -29,8 +29,6 @@ export default function AlbumPage() {
               key={index}
               src={photo.src}
               alt={photo.alt}
-              width={photo.width}
-              height={photo.height}
               caption={photo.caption}
               location={photo.location ?? 'Somewhere'}
               device={photo.device}
