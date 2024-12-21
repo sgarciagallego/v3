@@ -11,7 +11,7 @@ export default function Figure({
 }: {
   src: string;
   alt: string;
-  caption?: string;
+  caption: string;
   location: string;
   device: string;
 }) {

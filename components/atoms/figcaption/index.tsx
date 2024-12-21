@@ -5,7 +5,7 @@ export default function Figcaption({
   location,
   device,
 }: {
-  caption?: string;
+  caption: string;
   location: string;
   device: string;
 }) {
