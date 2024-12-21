@@ -35,13 +35,7 @@ export default function HomePage() {
       </section>
       <PhotoGrid>
         {carousel.map((image, index) => (
-          <Img
-            key={index}
-            src={image.src}
-            alt={image.alt}
-            width={image.width}
-            height={image.height}
-          />
+          <Img key={index} src={image.src} alt={image.alt} />
         ))}
       </PhotoGrid>
       <section>

@@ -3,30 +3,37 @@ import Image, { ImageProps } from 'next/image';
 import path from 'path';
 import sharp from 'sharp';
 
-interface ImgProps extends ImageProps {
+interface ImgProps extends Omit<ImageProps, 'width' | 'height'> {
   src: string;
   alt: string;
-  width: number;
-  height: number;
 }
 
-export default async function Img(props: ImgProps) {
-  const imagePath = path.join(process.cwd(), 'public', props.src);
+async function getImageMetadata(src: string) {
+  const imagePath = path.join(process.cwd(), 'public', src);
   const sharpImage = sharp(imagePath);
   const metadata = await sharpImage.metadata();
-
-  const width = metadata.width ?? props.width;
-  const height = metadata.height ?? props.height;
-
   const placeholder = await sharpImage.resize(10).toBuffer();
   const base64 = placeholder.toString('base64');
   const blurDataURL = `data:image/png;base64,${base64}`;
 
+  return {
+    width: metadata.width,
+    height: metadata.height,
+    blurDataURL,
+  };
+}
+
+export default async function Img(props: ImgProps) {
+  const { src, alt, ...rest } = props;
+
+  const { width, height, blurDataURL } = await getImageMetadata(src);
+
   return (
     <Image
-      {...props}
+      {...rest}
+      src={src}
       quality={100}
-      alt={props.alt || ''}
+      alt={alt || ''}
       placeholder="blur"
       blurDataURL={blurDataURL}
       width={width}

@@ -6,7 +6,7 @@ type Metadata = {
   summary: string;
   description: string;
   publishDate: string;
-  image?: string;
+  opengraph_image?: string;
 };
 
 function parseFrontmatter(fileContent: string) {

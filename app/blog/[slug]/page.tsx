@@ -7,11 +7,9 @@ import Subtitle from '@/components/atoms/subtitle';
 import Meta from '@/components/molecules/meta';
 import { CustomMDX } from '@/components/atoms/mdx';
 
-export async function generateMetadata(
-  props: {
-    params: Promise<{ slug: string }>;
-  }
-): Promise<Metadata | undefined> {
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata | undefined> {
   const params = await props.params;
   let post = getPosts().find((post) => post.slug === params.slug);
 
@@ -23,10 +21,10 @@ export async function generateMetadata(
     title,
     publishDate: publishedTime,
     description: description,
-    image,
+    opengraph_image,
   } = post.metadata;
-  const ogImage = image
-    ? `${siteConfig.url}${image}`
+  const ogImage = opengraph_image
+    ? `${siteConfig.url}${opengraph_image}`
     : `${siteConfig.url}/api/og?title=${title}`;
 
   return {
@@ -49,11 +47,9 @@ export async function generateMetadata(
   };
 }
 
-export default async function PostPage(
-  props: {
-    params: Promise<{ slug: string }>;
-  }
-) {
+export default async function PostPage(props: {
+  params: Promise<{ slug: string }>;
+}) {
   const params = await props.params;
   const post = getPosts().find((post) => post.slug === params.slug);
 

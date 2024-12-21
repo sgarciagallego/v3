@@ -12,7 +12,7 @@ export default function Meta({
 }) {
   return (
     <article className={styles.properties}>
-      <Img src="/avatar.jpeg" alt="Sergio’s avatar" width={64} height={64} />
+      <Img src="/avatar.jpeg" alt="Sergio’s avatar" />
       <div>
         <p rel="author">Sergio Garcia Gallego</p>
         <p>
