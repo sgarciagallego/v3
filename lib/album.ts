@@ -1,4 +1,10 @@
-const album = [
+const album: {
+  src: string;
+  alt: string;
+  caption: string;
+  location: string;
+  device: string;
+}[] = [
   {
     src: '/photography/000.jpg',
     alt: 'My fiancé picking some blackberries, shortly before offering me some',
@@ -111,6 +117,37 @@ const album = [
     location: 'Combe Valley, East Sussex',
     device: 'Fujifilm X-S10',
   },
+  {
+    src: '/photography/016.jpg',
+    alt: 'A coastal photo just of the Bexhill promenade on a windy day',
+    caption: 'Emotional waters',
+    location: 'Bexhill Beach, East Sussex',
+    device: 'Fujifilm X-S10',
+  },
+  {
+    src: '/photography/017.jpg',
+    alt: 'A woman holding her raising her baby in the air while looking at the her',
+    caption: 'Now we are three',
+    location: 'Egerton Park, Bexhill',
+    device: 'Fujifilm X-S10',
+  },
+  {
+    src: '/photography/018.jpg',
+    alt: 'A landscape of the Egerton Park lake on a sunny winters day',
+    caption: 'Tranquil',
+    location: 'Egerton Park, Bexhill',
+    device: 'Fujifilm X-S10',
+  },
+  /*
+  ? Usage
+  {
+    src: '',
+    alt: '',
+    caption: '',
+    location: '',
+    device: '',
+  },
+  */
 ];
 
 export default album;

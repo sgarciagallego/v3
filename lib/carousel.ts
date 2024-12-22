@@ -1,4 +1,4 @@
-const carousel = [
+const carousel: { src: string; alt: string }[] = [
   {
     src: '/carousel/01.jpeg',
     alt: 'Sergio hiking the Sólheimajökull glacier, Iceland',

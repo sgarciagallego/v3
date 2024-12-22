@@ -1,4 +1,4 @@
-export const spotlight = [
+export const spotlight: { name: string; href: string }[] = [
   {
     name: 'Figma',
     href: 'https://www.figma.com',

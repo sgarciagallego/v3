@@ -1,4 +1,4 @@
-export const social = [
+export const social: { name: string; href: string; }[] = [
   {
     name: 'Github',
     href: 'https://github.com/sgarciagallego',
