@@ -1,9 +1,9 @@
-import createHeading from './heading';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import Img from '../image';
+import Hyperlink from '../link';
 import Code from './code';
 import CodeBlock from './codeblock';
-import Hyperlink from '../link';
-import Img from '../image';
-import { MDXRemote } from 'next-mdx-remote/rsc';
+import createHeading from './heading';
 
 const components = {
   h2: createHeading(2),
@@ -11,7 +11,7 @@ const components = {
   h4: createHeading(4),
   a: Hyperlink,
   code: Code,
-  pre: CodeBlock,
+  pre: (props: any) => <CodeBlock>{props.children.props.children}</CodeBlock>,
   img: Img,
 };
 
