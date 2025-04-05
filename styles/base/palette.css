@@ -27,15 +27,17 @@
   --color-underline: var(--color-tone-60);
   --color-standout: var(--color-border);
 
-  --sh-class: #2a5b8c;
-  --sh-identifier: #203040;
-  --sh-sign: #5c6166;
-  --sh-string: #0a6663;
-  --sh-keyword: #d92316;
-  --sh-comment: #665c5c;
-  --sh-jsxliterals: #5c60e6;
-  --sh-property: #b34512;
-  --sh-entity: #b34512;
+  --sh-line-number: #747474;
+  --sh-background: #1e1e1e;
+  --sh-class: #8fc7ff;
+  --sh-identifier: #dfd6cf;
+  --sh-sign: #b8d7f9;
+  --sh-property: #eecfa0;
+  --sh-entity: #edabaa;
+  --sh-jsxliterals: #cbd5e1;
+  --sh-string: #a4dfae;
+  --sh-keyword: #e3cbeb;
+  --sh-comment: #999999;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -59,16 +61,6 @@
     --color-border: var(--color-tone-10);
     --color-background-layer: var(--color-tone-05);
     --color-underline: var(--color-tone-40);
-
-    --sh-class: #6ca3d9;
-    --sh-identifier: #98b8d9;
-    --sh-sign: #a1aab3;
-    --sh-string: #59b3b0;
-    --sh-keyword: #d9746c;
-    --sh-comment: #8c8585;
-    --sh-jsxliterals: #a1a3e6;
-    --sh-property: #b3826b;
-    --sh-entity: #b3826b;
   }
 }
 

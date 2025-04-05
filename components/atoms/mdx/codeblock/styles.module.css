@@ -5,10 +5,9 @@
 .properties {
   scrollbar-width: 0;
   overflow: hidden;
-  border: var(--space-x1) solid rgb(var(--color-border));
   border-radius: var(--curve-parent);
   padding: var(--padding-layer-x2);
-  background: rgb(var(--color-background-layer));
+  background: var(--sh-background);
 }
 
 .properties > code {
@@ -29,11 +28,19 @@
   margin-right: var(--padding-layer-x2);
   display: inline-block;
   content: counter(sh-line-number);
-  color: rgb(var(--color-tone-40));
+  color: var(--sh-line-number);
   text-align: right;
 }
 
 .properties > code > span:nth-last-child(n + 10)::before,
 .properties > code > span:nth-last-child(n + 10) ~ span::before {
   width: 2ch;
+}
+
+.properties .sh__token--keyword {
+  font-style: italic;
+}
+
+.properties .sh__token--class {
+  font-weight: 800;
 }

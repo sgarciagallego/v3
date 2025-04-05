@@ -174,7 +174,16 @@ button:focus-visible {
 code {
   font-family: var(--mono);
   font-size: 0.875em;
-  font-weight: 500;
+  font-weight: 400;
+  line-height: 1.8125;
+}
+
+.sh__token--keyword {
+  font-style: italic;
+}
+
+.sh__token--class {
+  font-weight: 800;
 }
 
 dt {

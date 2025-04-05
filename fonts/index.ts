@@ -4,31 +4,35 @@ import localFont from 'next/font/local';
 export const heading = Bricolage_Grotesque({
   subsets: ['latin'],
   display: 'swap',
-  fallback: [
-    'system-ui',
-    '-apple-system',
-    'Open Sans',
-    'Helvetica Neue',
-    'sans-serif',
-  ],
+  fallback: ['sans-serif'],
   variable: '--heading',
 });
 
 export const mono = localFont({
   src: [
     {
-      path: './mono/500.woff',
-      weight: '500',
+      path: './mono/roman/400.woff2',
+      weight: '400',
       style: 'normal',
     },
     {
-      path: './mono/500.woff2',
-      weight: '500',
+      path: './mono/italic/400.woff2',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: './mono/roman/800.woff2',
+      weight: '800',
       style: 'normal',
     },
+    {
+      path: './mono/italic/800.woff2',
+      weight: '800',
+      style: 'italic',
+    }
   ],
   display: 'swap',
-  fallback: ['Courier New', 'Courier', 'monospace'],
+  fallback: ['monospace'],
   variable: '--mono',
 });
 
@@ -76,12 +80,6 @@ export const sans = localFont({
     },
   ],
   display: 'swap',
-  fallback: [
-    'system-ui',
-    '-apple-system',
-    'Open Sans',
-    'Helvetica Neue',
-    'sans-serif',
-  ],
+  fallback: ['sans-serif'],
   variable: '--sans',
 });
