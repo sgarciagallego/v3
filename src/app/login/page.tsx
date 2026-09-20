@@ -1,0 +1,61 @@
+// biome-ignore-all lint/correctness/useUniqueElementIds: id pairs with the label htmlFor.
+import type { Metadata } from 'next';
+import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
+import { getServerSession } from 'next-auth';
+
+import Prompt from '@/components/atoms/prompt';
+import { authOptions } from '@/lib/auth';
+import { siteConfig } from '@/lib/constant';
+
+export const metadata: Metadata = {
+	title: 'Login',
+	description:
+		'Well well well. It looks like you’ve bumped into a protected page. Enter the password or else...',
+	alternates: {
+		canonical: `${siteConfig.url}/login`,
+	},
+};
+
+export default async function LoginPage() {
+	const session = await getServerSession(authOptions);
+	const cookieStore = await cookies();
+
+	if (session) {
+		redirect('/');
+	}
+
+	const csrfTokenCookie = `${
+		process.env.NODE_ENV === 'production' ? '__Host-' : ''
+	}next-auth.csrf-token`;
+	const csrfToken = (await cookieStore)
+		.get(csrfTokenCookie)
+		?.value.split('|')[0];
+
+	return (
+		<main>
+			<form
+				method="POST"
+				action="/api/auth/callback/credentials"
+				className="height-fill"
+			>
+				<input
+					name="csrfToken"
+					type="hidden"
+					defaultValue={csrfToken}
+				/>
+				<label htmlFor="password">
+					<h1 aria-label="Log in">🔐</h1>
+				</label>
+				<Prompt>{'Oh no, that’s not quite right!'}</Prompt>
+				<input
+					id="password"
+					name="password"
+					type="password"
+					placeholder="Enter password"
+				/>
+				<button type="submit">Log in</button>
+			</form>
+		</main>
+	);
+}

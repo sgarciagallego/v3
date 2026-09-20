@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+
+@import './base/palette.css';
+@import './base/spacing.css';
+@import './base/typography.css';
+@import './base/animation.css';
+@import './base/utilities.css';

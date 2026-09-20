@@ -1,0 +1,74 @@
+@theme static {
+	--color-*: initial;
+
+	--color-transparent: transparent;
+	--color-current: currentColor;
+
+	--color-tone-0: #ffffff;
+	--color-tone-05: #ffffff;
+	--color-tone-10: #fafafa;
+	--color-tone-15: #ededed;
+	--color-tone-20: #e0e0e0;
+	--color-tone-30: #c6c6c6;
+	--color-tone-40: #acacac;
+	--color-tone-50: #929292;
+	--color-tone-60: #797979;
+	--color-tone-70: #5f5f5f;
+	--color-tone-80: #454545;
+	--color-tone-90: #2b2b2b;
+	--color-tone-100: #111111;
+
+	--color-brand-github: #2dba4e;
+	--color-brand-linkedin: #0b66c2;
+	--color-brand-rss: var(--color-tone-10);
+
+	--color-background: var(--color-tone-10);
+	--color-background-hover: var(--color-tone-15);
+	--color-text: var(--color-tone-70);
+	--color-border: var(--color-tone-15);
+	--color-layer: var(--color-tone-0);
+	--color-layer-hover: var(--color-border);
+	--color-underline: var(--color-tone-60);
+	--color-standout: var(--color-border);
+
+	--color-sh-background: var(--sh-background);
+	--color-sh-keyword: var(--sh-keyword);
+}
+
+:root {
+	--sh-line-number: #747474;
+	--sh-background: #1e1e1e;
+	--sh-class: #8fc7ff;
+	--sh-identifier: #dfd6cf;
+	--sh-sign: #b8d7f9;
+	--sh-property: #eecfa0;
+	--sh-entity: #edabaa;
+	--sh-jsxliterals: #cbd5e1;
+	--sh-string: #a4dfae;
+	--sh-keyword: #e3cbeb;
+	--sh-comment: #999999;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-tone-0: #111111;
+		--color-tone-05: #1e1e1e;
+		--color-tone-10: #2b2b2b;
+		--color-tone-20: #454545;
+		--color-tone-30: #5f5f5f;
+		--color-tone-40: #797979;
+		--color-tone-50: #929292;
+		--color-tone-60: #acacac;
+		--color-tone-70: #c6c6c6;
+		--color-tone-80: #e0e0e0;
+		--color-tone-90: #fafafa;
+		--color-tone-100: #ffffff;
+
+		--color-background: var(--color-tone-0);
+		--color-background-hover: var(--color-tone-10);
+		--color-text: var(--color-tone-60);
+		--color-border: var(--color-tone-10);
+		--color-layer: var(--color-tone-05);
+		--color-underline: var(--color-tone-40);
+	}
+}

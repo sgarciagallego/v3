@@ -1,9 +1,0 @@
-.properties {
-  margin-bottom: var(--space-x6);
-  container-type: inline-size;
-}
-
-.properties > nav {
-  margin-top: var(--space-x6);
-  margin-bottom: 0;
-}

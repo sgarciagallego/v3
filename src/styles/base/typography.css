@@ -1,0 +1,239 @@
+@theme static {
+	--text-*: initial;
+
+	--text-meta: clamp(0.651rem, -0.0245cqi + 0.6584rem, 0.64rem);
+	--text-sm: clamp(0.7813rem, 0.0417cqi + 0.7687rem, 0.8rem);
+	--text-base: clamp(0.9375rem, 0.1389cqi + 0.8958rem, 1rem);
+	--text-h4: clamp(1.125rem, 0.2778cqi + 1.0417rem, 1.25rem);
+	--text-h3: clamp(1.35rem, 0.4722cqi + 1.2083rem, 1.5625rem);
+	--text-h2: clamp(1.62rem, 0.7403cqi + 1.3979rem, 1.9531rem);
+	--text-h1: clamp(1.944rem, 1.1053cqi + 1.6124rem, 2.4414rem);
+}
+
+@theme static {
+	--font-*: initial;
+	--font-sans: var(--sans);
+	--font-mono: var(--mono);
+	--font-heading: var(--heading);
+}
+
+@supports not (font-size: clamp(1rem, 1cqi, 1rem)) {
+	:root {
+		--text-meta: 0.651rem;
+		--text-sm: 0.7813rem;
+		--text-base: 0.9375rem;
+		--text-h4: 1.125rem;
+		--text-h3: 1.35rem;
+		--text-h2: 1.62rem;
+		--text-h1: 1.944rem;
+	}
+	@media screen and (min-width: 1200px) {
+		:root {
+			--text-meta: 0.64rem;
+			--text-sm: 0.8rem;
+			--text-base: 1rem;
+			--text-h4: 1.25rem;
+			--text-h3: 1.5625rem;
+			--text-h2: 1.9531rem;
+			--text-h1: 2.4414rem;
+		}
+	}
+}
+
+@layer base {
+	html {
+		font-size: var(--text-base);
+		scroll-behavior: smooth;
+	}
+
+	body {
+		max-width: 100vw;
+		overflow-x: hidden;
+		background: var(--color-background);
+		color: var(--color-text);
+		font-family: var(--font-sans);
+		font-size: 1em;
+		-webkit-font-smoothing: antialiased;
+		line-height: 1.75;
+	}
+
+	[id],
+	:target {
+		scroll-margin-top: var(--spacing-x6);
+	}
+
+	p,
+	h1,
+	h2,
+	h3,
+	h4 {
+		overflow-wrap: break-word;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		margin-bottom: 0.5em;
+		color: var(--color-tone-100);
+		font-family: var(--font-heading);
+		font-weight: 800;
+		letter-spacing: -0.0375em;
+		line-height: 1.15;
+	}
+
+	h1 {
+		font-size: var(--text-h1);
+	}
+	h2 {
+		font-size: var(--text-h2);
+	}
+	h3 {
+		font-size: var(--text-h3);
+	}
+	h4 {
+		font-size: var(--text-h4);
+	}
+
+	p:not(:last-child) {
+		margin-bottom: var(--spacing-x6);
+	}
+
+	p:not(:last-child):has(+ ul),
+	p:not(:last-child):has(+ ol) {
+		margin-bottom: 1em;
+	}
+
+	ul {
+		list-style-type: disc;
+	}
+	ol {
+		list-style-type: decimal;
+	}
+
+	ul,
+	ol {
+		padding-inline-start: var(--spacing-x5);
+	}
+
+	ul:not(:last-child),
+	ol:not(:last-child) {
+		margin-bottom: var(--spacing-x6);
+	}
+
+	ul > li:not(:last-child),
+	ol > li:not(:last-child) {
+		margin-bottom: var(--spacing-x4);
+	}
+
+	ul > li::marker {
+		color: var(--color-tone-20);
+	}
+	ol > li::marker {
+		color: var(--color-tone-30);
+	}
+
+	strong {
+		color: var(--color-tone-100);
+		font-weight: 400;
+	}
+
+	small,
+	sub,
+	sup {
+		font-size: revert;
+		line-height: revert;
+		position: revert;
+		vertical-align: revert;
+		top: revert;
+		bottom: revert;
+	}
+
+	input,
+	button,
+	textarea,
+	select {
+		font: inherit;
+	}
+
+	input,
+	button {
+		border-width: var(--spacing-x1);
+		border-style: solid;
+		width: calc(var(--spacing-x8) * 3);
+		border-radius: var(--radius-parent);
+		padding: var(--spacing-layer);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	input {
+		margin-bottom: var(--spacing-x4);
+		border-color: var(--color-border);
+		background: var(--color-layer);
+		color: var(--color-tone-90);
+		font-family: var(--font-mono);
+		font-weight: 900;
+		text-align: center;
+	}
+
+	input::placeholder {
+		color: revert;
+		font-family: var(--font-sans);
+		font-weight: 400;
+	}
+
+	input:focus-visible {
+		outline: none;
+		background: var(--color-layer-hover);
+	}
+
+	button {
+		cursor: pointer;
+		border-color: var(--color-text);
+		background: var(--color-text);
+		color: var(--color-background);
+	}
+
+	button:hover,
+	button:focus-visible {
+		outline: none;
+		border-color: var(--color-tone-100);
+		background: var(--color-tone-100);
+	}
+
+	code {
+		font-family: var(--font-mono);
+		font-size: 0.875em;
+		font-weight: 400;
+		line-height: 1.8125;
+	}
+
+	.sh__token--keyword {
+		font-style: italic;
+	}
+
+	.sh__token--class {
+		font-weight: 800;
+	}
+
+	dt {
+		font-size: var(--text-meta);
+	}
+
+	dd {
+		color: var(--color-tone-100);
+		font-size: var(--text-sm);
+		font-weight: 500;
+	}
+
+	hr {
+		max-width: 33.333%;
+		margin-block-start: 2em;
+		margin-right: auto;
+		margin-block-end: 2em;
+		margin-left: auto;
+		border: var(--spacing-x1) solid var(--color-border);
+	}
+}

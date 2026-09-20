@@ -1,5 +1,0 @@
-.properties {
-  display: flex;
-  flex-direction: column;
-  row-gap: var(--space-x6);
-}
