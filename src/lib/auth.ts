@@ -1,5 +1,9 @@
+import { createHash, timingSafeEqual } from 'node:crypto';
+
 import type { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
+
+const digest = (value: string) => createHash('sha256').update(value).digest();
 
 export const authOptions: NextAuthOptions = {
 	providers: [
@@ -12,11 +16,16 @@ export const authOptions: NextAuthOptions = {
 				},
 			},
 			async authorize(credentials, _request) {
-				if (credentials?.password === process.env.NEXTAUTH_PASSWORD) {
-					return { id: '0' };
-				} else {
+				const expected = process.env.NEXTAUTH_PASSWORD;
+				const supplied = credentials?.password;
+
+				if (!expected || typeof supplied !== 'string' || !supplied) {
 					return null;
 				}
+
+				return timingSafeEqual(digest(supplied), digest(expected))
+					? { id: '0' }
+					: null;
 			},
 		}),
 	],
