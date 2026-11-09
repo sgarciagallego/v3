@@ -1,0 +1,108 @@
+---
+  title: All you need to know about handling typography on the web
+  summary: Type, scale and hierarchy
+  description: Text is an essential component of design. Without it, we struggle with communication. Here you'll find out everything you need to know about handling typography on the web.
+  publishDate: 2024-06-27
+---
+
+![A visual representation of a larger contrast typographic scale](/blog/04/01.png)
+
+Text is an essential component of design. It provides clarity, precision and depth that other forms of communication struggle to achieve. Back when I ran Origin Blank, my web studio, a lot of my time went into designing [content and brand style guides](/blog/design-systems-vs-pattern-libraries-vs-style-guides-whats-the-difference) that informed how a brand's copy (and everything around it) looked and felt to its people.
+
+## Typography vs typeface vs font
+
+Understanding the difference between each term is more important when collaborating with designers to create web interfaces, as there are different terms used to define the same concept in design and development for whatever reason.
+
+### Typography
+
+Typography is the art of arranging letters that makes writing visually legible and appealing to the reader.
+
+### Typeface
+
+A typeface is another term for a font family of different weights.
+
+### Font
+
+A font is a member of a typeface, or font family.
+
+![A visual representation of the differences between typography, typeface and font](/blog/04/02.png)
+
+## Creating visual hierarchy
+
+Visual hierarchy establishes levels of importance in your web interface achieved through a typographic hierarchy. Without this hierarchy, a person struggles to differentiate blocks within an interface. So naturally, the question is asked: how do we create a typographic hierarchy?
+
+### Type scales
+
+When designing an interface, designers opt for type scales, which dictate related type levels, since they grow by the same ratio to create a balanced and friendly interface.
+
+![A visual representation of the perfect fifth type scale ratio](/blog/04/03.png)
+
+There are different blueprints of type scale ratios to choose from, and they often depend on the specific needs and purpose of the interface. For example, lower contrast ratios are for long-form copy (such as a blog post or wiki), and higher contrast ratios are for posters and advertisement pieces.
+
+Here is a list of the type ratio blueprints used on web interfaces.
+
+#### Low contrast ratios
+
+These ratios are suitable for product sites.
+
+- 1.067 (Minor Second)
+- 1.125 (Major Second)
+- 1.2 (Minor Third)
+
+#### Medium contrast ratios
+
+These ratios are suitable for blog and info sites.
+
+- 1.25 (Major Third)
+- 1.333 (Perfect Fourth)
+- 1.414 (Augmented Fourth)
+
+#### High contrast ratios
+
+These ratios are suitable for marketing sites.
+
+- 1.5 (Perfect Fifth)
+- 1.618 (Golden Ratio)
+
+Here is an extended cut of ratios used in graphic design.
+
+- 1.777 (Major Sixth)
+- 2 (Octave)
+
+However, while there are tried-and-tested blueprints of type scales when creating web interfaces, we must create responsive layouts as well, and the type ratios used on larger-width screens might not work particularly well on smaller-width screens, and vice versa, bringing us to the following section.
+
+### Responsive typography
+
+When designing interfaces, consider the environment in which they're being served. 
+
+For web interfaces, these include mobile, tablet, laptop and desktop. When defining the layout of an interface, layout variations should exist depending on the device it is served on. 
+
+![A visual representation of how an unresponsive type scale looks on a larger and smaller width screen](/blog/04/04.png)
+
+The optimal way to create a responsive type scale for an interface is by choosing a second type ratio which suitably fits smaller or larger screen widths.
+
+![A visual representation of how a responsive type scale complements different width screens](/blog/04/05.png)
+
+## Implementing accessibility
+
+### Headings
+
+Heading copy must have sufficient visual contrast to other copy on your page by bolding and increasing the size of headings compared to body text. However, headings should still be displayed using their respective heading elements.
+
+### Selectable text
+
+Document text should have the ability to be selected, copied and pasted onto another location.
+
+### Descriptive links
+
+Link copy should describe the destination, and needs to make sense when read out of context. Similar to headings, links must also have sufficient visual contrast to other text on your page.
+
+### Structure 
+
+Text on a document must follow a logical hierarchy by ordering heading levels consecutively, forming a list from related items, and ensuring that the reading flow follows a top-to-bottom and left-to-right order. Any emphasis in your copy must be italicised using `<em>`, and importance should be bolded using `<strong>`.
+
+## Summary
+
+Typography is one of those things that nobody notices when it's done well, and everybody notices when it isn't. Know your typography from your typefaces and fonts, build your hierarchy on a type scale that suits your content, give it a second ratio for smaller screens, and never treat accessibility as an afterthought.
+
+Like my post on [design systems, pattern libraries and style guides](/blog/design-systems-vs-pattern-libraries-vs-style-guides-whats-the-difference), this one was originally written for Origin Blank, the web studio I used to run. If you spot anything that could be clearer or more accessible, I'd love your [feedback](mailto:gallegogarciasergio@gmail.com).

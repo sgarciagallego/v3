@@ -1,0 +1,112 @@
+---
+  title: The difference between design systems, pattern libraries, and style guides
+  summary: They’re not the same thing
+  description: I've noticed that the terms design system, pattern library, and style guide have been used interchangeably. Let's clarify the differences.
+  publishDate: 2024-06-12
+---
+
+![An empty venn diagram used to represent the topic of the blog](/blog/03/01.png)
+
+Over the years, and especially while running Origin Blank, my former web studio, I've noticed that the terms design system, pattern library, and style guide have been used interchangeably. While the terms are connected, it is important to understand the separation between each, especially when communicating with a wider team.
+
+## What is a style guide?
+
+A style guide is a vaguely defined term that is commonly used to refer to the combination of these two documents:
+
+* Content style guide
+* Brand style guide
+
+When referring to style guides in this context, where we want to communicate that a document has both visual and written communications documented, we should refer to these as brand guidelines.
+
+### Content style guide
+
+A content style guide is a document that sets the standard writing, grammar, and punctuation conventions people working for an organisation should follow to maintain a consistent tone of voice across its entire online presence.
+
+#### Practical examples
+
+Here are some examples of content style guides currently out in the wild:
+
+* [Mailchimp Content Style Guide](https://styleguide.mailchimp.com)
+* [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome)
+* [Apple Style Guide](https://support.apple.com/en-gb/guide/applestyleguide/welcome/web)
+
+### Brand style guide
+
+A brand style guide is a document that sets the standard of how a brand should be visually presented to its people. These documents contain typography, colour, logos and imagery.
+
+#### Practical examples
+
+Here are some examples of brand style guides currently out in the wild:
+
+* [Asana Brand Style Guide](https://asana.com/brand)
+* [Spotify Design Guidelines](https://developer.spotify.com/documentation/design)
+* [Barbican Guidelines](https://guidelines.barbican.org.uk/brand)
+
+## Pattern vs component libraries
+
+A pattern library can sometimes be confused with a component library, and as a result, is often used interchangeably. To explain the difference, let's first provide an overview of Brad Frost's [Atomic Design](https://atomicdesign.bradfrost.com/table-of-contents) methodology, which will allow us to understand the difference between each.
+
+![A visual aid to understanding the atomic design methodology](/blog/03/02.png)
+
+* **Atoms** are the basic building blocks of all matter, and cannot be broken down further without losing their meaning. For example, a button.
+* **Molecules** are groups of two or more atoms bonded together. For example, a form label, input and button to create a search bar.
+* **Organisms** are groups of molecules joined together to form a section of an interface. For example, a header built of a search bar and navigation menu.
+* **Templates** are groups of organisms stitched together to form a layout. For example, a page.
+
+Now that we have a high-level understanding of the atomic design methodology, we can use our atoms, molecules, organisms and templates to inform our definition between pattern and component libraries.
+
+### Pattern library
+
+Patterns are the molecules and organisms in your interface. For example, a navigation menu with a logo or a search form.
+
+Therefore, a pattern library is a collection of UI patterns within a design system.
+
+#### Practical examples
+
+Here are some examples of pattern libraries currently out in the wild:
+
+* [Mailchimp Pattern Library](https://ux.mailchimp.com/patterns)
+* [Polaris Patterns by Shopify](https://polaris.shopify.com/patterns)
+
+### Component library
+
+Components are the atoms in your interface and are presented as reusable blocks of code that can stand alone or become the foundations for your molecules, organisms and templates. For example, a button or a form input.
+
+Therefore, a component library is a set of UI components within a design system.
+
+#### Practical examples
+
+Here are some examples of component libraries currently out in the wild:
+
+* [Lightning Web Components by Salesforce](https://developer.salesforce.com/docs/component-library)
+* [Polaris Components by Shopify](https://polaris.shopify.com/components)
+* [Atlassian Components](https://atlassian.design/components)
+
+
+## What is a design system?
+
+Now that we know about content and style guides, as well as component and pattern libraries, we can move on to understanding design systems.
+
+A design system is the complete set of brand guidelines, pattern libraries, and component libraries all brought together for the sole purpose of providing designers and developers a one-stop shop to build and scale digital products.
+
+Design systems often vary in the weight of their contents, depending on the depth of needs of the company that developed them. As a result, some other things you'll find within a design system can include:
+
+* Accessibility guidelines
+* Governance
+* Best practices
+* CSS variables and design tokens
+* Downloadable assets
+
+### Practical examples
+
+Here are some examples of design systems currently out in the wild:
+
+* [Shopify Polaris](https://polaris.shopify.com)
+* [Atlassian Design System](https://atlassian.design)
+* [Material Design](https://material.io)
+
+## Summary
+
+So, to recap: a style guide sets out how a brand writes and looks, a component library holds your atoms, a pattern library collects your molecules and organisms, and a design system brings them all together under one roof. Next time someone uses the three interchangeably in a meeting, you'll know exactly which one they mean (and, if you're feeling brave, can gently correct them).
+
+This post was originally written for the blog of Origin Blank, the web studio I used to run. The distinction is as relevant as ever, so I felt it deserved a new home here.
