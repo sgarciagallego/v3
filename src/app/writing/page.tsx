@@ -4,18 +4,18 @@ import Posts from '@/components/molecules/posts';
 import { siteConfig } from '@/lib/constant';
 
 export const metadata: Metadata = {
-	title: 'Blog',
+	title: 'Writing',
 	description: siteConfig.description,
 	alternates: {
-		canonical: `${siteConfig.url}/blog`,
+		canonical: `${siteConfig.url}/writing`,
 	},
 };
 
-export default function BlogPage() {
+export default function WritingPage() {
 	return (
 		<>
 			<header>
-				<h1>Blog</h1>
+				<h1>Writing</h1>
 			</header>
 			<Posts />
 		</>

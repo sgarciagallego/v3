@@ -42,10 +42,11 @@ export default function HomePage() {
 			</PhotoGrid>
 			<section>
 				<p>
-					With this personal site, comes a new chapter: I will be
-					starting my long-awaited blogging journey! I won’t niche
-					down, but you’ll notice that my content reflects my
-					interests at the time.
+					With this personal site comes a new chapter: I’ll finally be
+					writing about personal and professional projects and
+					hobbies, which I hope will help people out across the web! I
+					won’t niche down, but you’ll notice that my content reflects
+					my interests at the time.
 				</p>
 				<Posts trim />
 			</section>

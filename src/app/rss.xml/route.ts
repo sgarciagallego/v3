@@ -6,10 +6,10 @@ import { getPosts } from '../db/blog';
 
 export async function GET() {
 	const feed = new RSS({
-		title: `${siteConfig.title}’s Blog`,
+		title: `${siteConfig.title}’s Writing`,
 		description: siteConfig.description,
 		site_url: `${siteConfig.url}`,
-		feed_url: `${siteConfig.url}/blog`,
+		feed_url: `${siteConfig.url}/writing`,
 		copyright: `${new Date().getFullYear()} — ${siteConfig.title}`,
 		language: 'en-GB',
 		pubDate: new Date(),
@@ -21,8 +21,8 @@ export async function GET() {
 		feed.item({
 			title: post.metadata.title,
 			description: post.metadata.description,
-			guid: `${siteConfig.url}/blog/${post.slug}`,
-			url: `${siteConfig.url}/blog/${post.slug}`,
+			guid: `${siteConfig.url}/writing/${post.slug}`,
+			url: `${siteConfig.url}/writing/${post.slug}`,
 			date: new Date(post.metadata.publishDate),
 		});
 	});

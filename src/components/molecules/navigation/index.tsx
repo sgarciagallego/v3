@@ -12,10 +12,7 @@ export default function Navigation() {
 					<Hyperlink href="/work">work</Hyperlink>
 				</li>
 				<li>
-					<Hyperlink href="/blog">blog</Hyperlink>
-				</li>
-				<li>
-					<Hyperlink href="/album">album</Hyperlink>
+					<Hyperlink href="/writing">writing</Hyperlink>
 				</li>
 			</List>
 		</nav>

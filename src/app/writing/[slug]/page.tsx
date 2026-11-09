@@ -41,7 +41,7 @@ export async function generateMetadata(props: {
 			description,
 			type: 'article',
 			publishedTime,
-			url: `${siteConfig.url}/blog/${post.slug}`,
+			url: `${siteConfig.url}/writing/${post.slug}`,
 			images: [{ url: ogImage }],
 		},
 		twitter: {

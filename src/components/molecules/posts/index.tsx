@@ -68,7 +68,7 @@ export default function Posts({ trim }: { trim?: boolean }) {
 					.slice(0, trim ? 4 : undefined)
 					.map(post => (
 						<li key={post.slug}>
-							<Hyperlink href={`/blog/${post.slug}`}>
+							<Hyperlink href={`/writing/${post.slug}`}>
 								<h2>{post.metadata.title}</h2>
 								<p>
 									<span>{counter(post.content)}</span>
@@ -82,7 +82,7 @@ export default function Posts({ trim }: { trim?: boolean }) {
 					))}
 			</List>
 			{trim && posts.length >= 4 && (
-				<Hyperlink href="/blog">View all</Hyperlink>
+				<Hyperlink href="/writing">View all</Hyperlink>
 			)}
 		</Element>
 	);

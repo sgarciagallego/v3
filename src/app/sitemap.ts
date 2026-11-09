@@ -9,8 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 		'',
 		'/work',
 		'/portfolio',
-		'/album',
-		'/blog',
+		'/writing',
 		'/colophon',
 		'/uses',
 	].map(route => ({
@@ -22,7 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
 	posts.forEach(post => {
 		routes.push({
-			url: `${siteConfig.url}/blog/${post.slug}`,
+			url: `${siteConfig.url}/writing/${post.slug}`,
 			lastModified: new Date(post.metadata.publishDate)
 				.toISOString()
 				.split('T')[0],
